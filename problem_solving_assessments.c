@@ -48,15 +48,37 @@ void assessment1_d() {
 // - Validate: if any input is negative, show error and stop
 void assessment1_c() {
     printf("Assessment 1 - C Grade (50-59) completed 08 March 2026 16:25\n\n");
-   int social_media;
+    int social_media;
    int youtube;
    int games;
+   int daily_limit=120;
    
    printf("Enter your Daily Screen Time for Social Media    (Minutes):"); scanf(" %d",&social_media);
+   if (social_media<0)
+   {
+       printf("Error!!! Negative numbers are invalid! Please enter valid numbers...\n********************************************************************");
+       return;
+   }
+   
+   
    printf("Enter your Daily Screen Time for YouTube         (Minutes):"); scanf(" %d",&youtube);
+   if (youtube<0)
+   {
+       printf("Error!!! Negative numbers are invalid! Please enter valid numbers...\n********************************************************************");
+       return;
+   }
+   
+   
    printf("Enter your Daily Screen Time for Games           (Minutes):"); scanf(" %d",&games);
-   printf("-----------------------------------------------------\n");
-   printf("-----------------------------------------------------\n");
+   
+   if (games<0)
+   {
+       printf("Error!!! Negative numbers are invalid! Please enter valid numbers...\n********************************************************************");
+       return;
+   }
+   
+    printf("-----------------------------------------------------\n");
+    printf("-----------------------------------------------------\n");
    
    int weekly_total_minutes_social_media=7*social_media;
    int weekly_total_minutes_youtube=7*youtube;
@@ -69,8 +91,24 @@ void assessment1_c() {
    printf("Total Weekly Screen Time :%d     Minutes / Week\n", weekly_total_minutes);
    printf("-----------------------------------------------------\n");
    printf("\nSocial Media             :%d      Minutes / Week\nYouTube                  :%d      Minutes / Week\nGames                    :%d      Minutes / Week",weekly_total_minutes_social_media,  weekly_total_minutes_youtube, weekly_total_minutes_games);
-   printf("\n-----------------------------------------------------\n");
-   printf("-----------------------------------------------------\n");
+ printf("\n-----------------------------------------------------\n");
+ double daily_average=(double)weekly_total_minutes/7;
+ printf("Daily Average Screen Time :%.2lf    Minutes / Day", daily_average);
+ printf("\nDaily Safe Limit is          :%d      Minutes / Day", daily_limit);
+  printf("\n-----------------------------------------------------\n");
+ 
+ if (daily_limit>=daily_average)
+ {
+     printf("\nYou are 'Within Recommended Limit'");
+ }
+ else
+ printf("\nIMPORTANT! You are 'Above Recommended Limit'!!!\n***********************************************");
+ 
+ 
+ 
+  printf("\n-----------------------------------------------------\n");
+ 
+ 
 }
 
 // B Grade (60-69) — Multi-Week Tracking and Comparison
@@ -79,8 +117,121 @@ void assessment1_c() {
 // - State whether each week is within or above recommended limit
 // - Compare two weeks: increased, decreased, or stayed the same
 void assessment1_b() {
-    printf("Assessment 1 - B Grade (60-69) coming soon\n");
+    printf("Assessment 1 - B Grade (60-69) completed 08 March 2026 21:42\n");
+   int social_media_w1;
+   int social_media_w2;
+   int youtube_w1;
+   int youtube_w2;
+   int games_w1;
+   int games_w2;
+   int daily_limit=120;
+  
+   printf("Enter your Screen Time for Social Media WEEK1 (Minutes)  :"); scanf(" %d", &social_media_w1);
+   if (social_media_w1<0){
+       printf("Error!!! Negative numbers are invalid! Please enter valid numbers...\n********************************************************************");
+       return;
+   }
+   
+   printf("Enter your Screen Time for Social Media WEEK2 (Minutes)  :"); scanf(" %d", &social_media_w2);
+   if (social_media_w2<0){
+       printf("Error!!! Negative numbers are invalid! Please enter valid numbers...\n********************************************************************");
+       return;
+   }
+   
+   printf("Enter your Screen Time for YouTube WEEK1 (Minutes)       :"); scanf(" %d",&youtube_w1);
+   if (youtube_w1<0){
+       printf("Error!!! Negative numbers are invalid! Please enter valid numbers...\n********************************************************************");
+       return;
+   }
+   
+   printf("Enter your Screen Time for YouTube WEEK2 (Minutes)       :"); scanf(" %d",&youtube_w2);
+   if (youtube_w2<0){
+       printf("Error!!! Negative numbers are invalid! Please enter valid numbers...\n********************************************************************");
+       return;
+   }
+   
+   printf("Enter your Screen Time for Games WEEK1 (Minutes)         :"); scanf(" %d",&games_w1);
+   if (games_w1<0){
+       printf("Error!!! Negative numbers are invalid! Please enter valid numbers...\n********************************************************************");
+       return;
+   }
+   
+      printf("Enter your Screen Time for Games WEEK2 (Minutes)         :"); scanf(" %d",&games_w2);
+   if (games_w2<0){
+       printf("Error!!! Negative numbers are invalid! Please enter valid numbers...\n********************************************************************");
+       return;
+   }
+   
+    printf("-----------------------------------------------------\n");
+    printf("-----------------------------------------------------\n");
+   
+   int w1_total=social_media_w1+youtube_w1+games_w1;
+   int w2_total=social_media_w2+youtube_w2+games_w2;
+   int w12_total=w1_total+w2_total;
+   printf("Total Week1 Screen Time :%d      Minutes / Week\n", w1_total);
+   printf("Total Week2 Screen Time :%d     Minutes / Week\n", w2_total);
+   
+   printf("---------------------------\n");
+   printf("Total W1+W2 Screen Time :%d     Minutes in Two Weeks\n", w12_total);
+  
+   printf("-----------------------------------------------------\n");
+double percentage_change = ((double)(w2_total - w1_total) / w1_total) * 100;
+if (w2_total > w1_total) {
+    printf("Overall Usage: INCREASED in Week 2 (%.2lf%% increase)\n", percentage_change);
 }
+else if (w2_total < w1_total) {
+    printf("Overall Usage: DECREASED in Week 2 (%.2lf%% decrease)\n", -percentage_change);
+}
+else {
+    printf("Overall Usage: STAYED THE SAME across both weeks (0%% change)\n");
+}
+
+ printf("-----------------------------------------------------\n");
+ 
+   int social_media_w12=social_media_w1+social_media_w2;
+   int youtube_w12= youtube_w1+ youtube_w2;
+   int games_w12=games_w1+games_w2;
+   
+   printf("\nSocial Media             :%d      Minutes in Two Weeks\nYouTube                  :%d      Minutes in Two Weeks\nGames                    :%d      Minutes in Two Weeks",social_media_w12, youtube_w12, games_w12);
+ printf("\n-----------------------------------------------------\n");
+ 
+ double w1_daily_average=(double)w1_total/7;
+ double w2_daily_average=(double)w2_total/7;
+ double w12_daily_average=(double)w12_total/14;
+ printf("WEEK 1 Daily Average Screen Time :%.2lf  Minutes / Day\n", w1_daily_average);
+ printf("WEEK 2 Daily Average Screen Time :%.2lf  Minutes / Day\n", w2_daily_average);
+ printf("Combined Two-Week Daily Average Screen Time :%.2lf  Minutes / Day\n", w12_daily_average);
+ printf("\nRecommended Daily Screen Time Limit      :%d      Minutes / Day", daily_limit);
+  printf("\n-----------------------------------------------------\n");
+
+ if (daily_limit>=w1_daily_average)
+ {
+     printf("\nYou are 'Within Recommended Limit' for WEEK1");
+ }
+ else
+ printf("\nIMPORTANT! You are 'Above Recommended Limit' for WEEK1 !!!\n***********************************************");
+  printf("\n-----------------------------------------------------\n");
+  
+ if (daily_limit>=w2_daily_average)
+ {
+     printf("\nYou are 'Within Recommended Limit' for WEEK2");
+ }
+ else
+ printf("\nIMPORTANT! You are 'Above Recommended Limit' for WEEK2 !!!\n***********************************************");
+  printf("\n-----------------------------------------------------\n");
+  
+ if (daily_limit>=w12_daily_average)
+ {
+     printf("\nYou are 'Within Recommended Limit' for Combined Two Weeks");
+ }
+ else
+ printf("\nIMPORTANT! You are 'Above Recommended Limit' for Combined Two Weeks !!!\n***********************************************");
+  printf("\n-----------------------------------------------------\n");
+  
+    return;
+}
+
+
 
 // A Grade (70-100) — Dynamic Categories and Per-Category Trends
 // NOTE: This grade requires arrays — will be completed after arrays topic
