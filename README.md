@@ -1,131 +1,92 @@
-# C Programming Journey
+# Problem Solving — Assessment Portfolio
 ### Mehmet Kaygusuz
 
-C Programming fundamentals — personal practice and university coursework
+QH0305 Problem Solving — Assessment Portfolio | Solent University 2025/26
 
 ---
 
 ## 📋 Project Overview
 
-This repository documents my C programming journey from absolute beginner to confident programmer. It combines self-directed practice with coursework from the Computer Science Foundation programme at Solent University (Manchester Campus).
+This repository contains my assessment portfolio for the QH0305 Problem Solving module at Solent University (Manchester Campus).
 
 All code in this repository is written entirely by me — no AI-generated code, no auto-complete. Every line typed manually as part of a deliberate learning process.
 
 **Key objectives:**
-- Build a solid foundation in C programming from scratch
-- Progress systematically from basics to advanced concepts
-- Document the full learning journey as a professional portfolio
-- Demonstrate growth through consistent, daily practice
+- Demonstrate problem solving skills through progressively complex C programs
+- Complete all 8 assessment tasks to the highest grade band possible
+- Document understanding through code, screenshots and written analysis
+- Build a professional portfolio of work throughout the module
 
 ---
 
 ## 📁 Repository Structure
 
 ```
-c-programming-journey/
+problem-solving-assessments/
 │
-├── c_programming_journey.c     # Main file — 30 practices, basics to mini projects
-├── c_functions.c               # Coming soon — Functions (parameters, return values)
-├── c_arrays.c                  # Coming soon — Arrays
-├── c_pointers.c                # Coming soon — Pointers
-├── c_structs.c                 # Coming soon — Structs
-├── c_file_io.c                 # Coming soon — File I/O
+├── problem_solving_assessments.c    # All assessments in one file — menu driven
 └── README.md
 ```
 
 ---
 
-## 🗺️ Learning Roadmap
+## 🗺️ Assessment Overview
 
-```
-Basics → Conditions → Switch/Case → Strings → Loops → Mini Projects
-             ↓
-         Functions
-             ↓
-           Arrays
-             ↓
-     Strings (in depth)
-             ↓
-          Pointers
-             ↓
-           Structs
-             ↓
-          File I/O
-             ↓
-       Advanced Topics
-```
+| Assessment | Week | Topic | Status |
+|---|---|---|---|
+| Assessment 1 | Week 3 | Variables and Operators — Weekly Screen-Time Tracker | 🔄 In progress |
+| Assessment 2 | Week 4 | Coming soon | ⏳ |
+| Assessment 3 | Week 5 | Coming soon | ⏳ |
+| Assessment 4 | Week 6 | Coming soon | ⏳ |
+| Assessment 5 | Week 8 | Coming soon | ⏳ |
+| Assessment 6 | Week 9 | Coming soon | ⏳ |
+| Assessment 7 | Week 11 | Coming soon | ⏳ |
+| Reflective Statement | End of unit | 1000 words | ⏳ |
 
 ---
 
-## 📄 c_programming_journey.c
+## 📄 problem_solving_assessments.c
 
-The main file contains **30 practices** organised by topic, accessible via an interactive menu.
+All assessments are contained in a single file, accessible via an interactive menu.
 
 ### Menu Structure
 
 ```
 ========================================
-     C PROGRAMMING JOURNEY
-     Mehmet Kaygusuz
-     Solent University — 2025
+  QH0305 — PROBLEM SOLVING
+  Assessment Portfolio
+  Mehmet Kaygusuz
 ========================================
 
---- BASICS ---
- 1  - Hello Deniz (first printf)
- 2  - Square of a Number
- 3  - Addition
- 4  - Price Calculator
- 5  - Age Calculator
- 6  - Height Converter (cm to metres)
-
---- CONDITIONS (if/else) ---
- 7  - Age Check
- 8  - Speed Check
- 9  - Ticket Price
- 10 - April Fools Day
- 11 - Age Comparison
- 12 - Positive / Negative / Odd / Even
-
---- SWITCH / CASE ---
- 13 - Traffic Light
- 14 - Restaurant Menu
- 15 - Grade System
- 16 - Calculator
- 17 - Day and Time (nested switch)
- 18 - Restaurant Sub-Menu (nested switch)
- 19 - Positive / Negative / Zero (switch)
-
---- STRINGS ---
- 20 - Login System
- 21 - Name Input (fgets)
- 22 - BMI Calculator
-
---- LOOPS ---
- 23 - Sum of Numbers (while)
- 24 - Positive / Negative Sum
- 25 - Odd / Even Sum
- 26 - Maximum / Minimum
- 27 - Even Numbers (for)
- 28 - Sum 1 to 10 (for)
-
---- MINI PROJECTS ---
- 29 - Number Guessing Game
- 30 - Shopping Tracker
+--- SELECT ASSESSMENT ---
+ 1  - Assessment 1 (Week 3)  : Weekly Screen-Time Tracker
+ 2  - Assessment 2 (Week 4)  : Coming soon
+ 3  - Assessment 3 (Week 5)  : Coming soon
+ 4  - Assessment 4 (Week 6)  : Coming soon
+ 5  - Assessment 5 (Week 8)  : Coming soon
+ 6  - Assessment 6 (Week 9)  : Coming soon
+ 7  - Assessment 7 (Week 11) : Coming soon
 
  0  - Exit
+
+--- SELECT GRADE BAND ---
+ 1  - D Grade (40-49)
+ 2  - C Grade (50-59)
+ 3  - B Grade (60-69)
+ 4  - A Grade (70-100)
 ========================================
 ```
 
-### Topics Covered
+### Grade Band Structure
 
-| Topic | Practices | Concepts |
+Each assessment contains four grade bands:
+
+| Grade | Mark Range | Description |
 |---|---|---|
-| Basics | 1 — 6 | Variables, printf, scanf, arithmetic, casting |
-| Conditions | 7 — 12 | if / else if / else, logical operators, nested if |
-| Switch/Case | 13 — 19 | switch, case, default, nested switch |
-| Strings | 20 — 22 | char[], strcmp, fgets, strcpy, buffer clearing |
-| Loops | 23 — 28 | while, for, counters, running totals |
-| Mini Projects | 29 — 30 | rand/srand, input validation, combined logic |
+| D | 40-49 | Basic implementation |
+| C | 50-59 | User input and validation |
+| B | 60-69 | Extended functionality |
+| A | 70-100 | Dynamic and advanced features |
 
 ---
 
@@ -135,17 +96,11 @@ The main file contains **30 practices** organised by topic, accessible via an in
 
 **Compile and run:**
 ```bash
-gcc c_programming_journey.c -o c_programming_journey
-./c_programming_journey
+gcc problem_solving_assessments.c -o problem_solving_assessments
+./problem_solving_assessments
 ```
 
-**Select a practice from the menu and press Enter.**
-
----
-
-## 📝 Personal Note
-
-Practice 01 — *Hello Deniz* — is a special one. The first printf was written by my daughter Deniz, age 9. Kept as a memory.
+**Select an assessment, then select a grade band.**
 
 ---
 
@@ -157,19 +112,6 @@ Practice 01 — *Hello Deniz* — is a special one. The first printf was written
 | VS Code | Editor |
 | Git & GitHub | Version control |
 | macOS Terminal | Compile and run |
-
----
-
-## 📊 Progress
-
-| File | Status | Practices |
-|---|---|---|
-| c_programming_journey.c | ✅ Active | 30 |
-| c_functions.c | ⏳ Coming soon | — |
-| c_arrays.c | ⏳ Coming soon | — |
-| c_pointers.c | ⏳ Coming soon | — |
-| c_structs.c | ⏳ Coming soon | — |
-| c_file_io.c | ⏳ Coming soon | — |
 
 ---
 
@@ -188,15 +130,17 @@ Computer Science Foundation Student | Solent University
 
 | | |
 |---|---|
+| Module | QH0305 Problem Solving |
 | Programme | Computer Science Foundation |
 | Institution | Solent University (Manchester Campus) |
 | Academic Year | 2025/26 |
+| Submission | June 2026 |
 
 ---
 
 ## 📄 License
 
-This project is available for educational reference under the MIT License.
+This project is part of academic coursework and is available for educational reference under the MIT License.
 
 ```
 MIT License
