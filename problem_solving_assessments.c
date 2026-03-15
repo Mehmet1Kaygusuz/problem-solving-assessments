@@ -241,8 +241,91 @@ else {
 // - Print detailed breakdown per week
 // - Compare Week 1 vs Week 2 per category: Increase, Decrease, No change
 void assessment1_a() {
-    printf("Assessment 1 - A Grade (70-100) coming soon — requires arrays\n");
+    printf("Assessment 1 - A Grade (70-100) completed 10 March 2026 23:44 — requires arrays\n");
+
+int n;
+    printf("How many categories do you want to track? : ");
+    scanf("%d", &n);
+
+    char categories[50][50];
+    int week1[50];
+    int week2[50];
+
+    int i;
+
+    // category names
+    for(i=0; i<n; i++){
+        printf("Enter name of category %d :", i+1);
+        scanf("%s", categories[i]);
+    }
+
+    // week1 values
+    for(i=0; i<n; i++){
+        printf("Enter minutes for %s (WEEK1):", categories[i]);
+        scanf("%d", &week1[i]);
+        if(week1[i] < 0){
+            printf("Error! Negative numbers not allowed.\n");
+            return;
+        }
+    }
+
+    // week2 values
+    for(i=0; i<n; i++){
+        printf("Enter minutes for %s (WEEK2):", categories[i]);
+        scanf("%d", &week2[i]);
+        if(week2[i] < 0){
+            printf("Error! Negative numbers not allowed.\n");
+            return;
+        }
+    }
+
+    printf("----------------------------------------------\n");
+
+    int w1_total = 0;
+    int w2_total = 0;
+
+    for(i=0; i<n; i++){
+        w1_total = w1_total + week1[i];
+        w2_total = w2_total + week2[i];
+    }
+
+    printf("Total WEEK1 Screen Time : %d minutes\n", w1_total);
+    printf("Total WEEK2 Screen Time : %d minutes\n", w2_total);
+
+    double w1_avg = (double)w1_total / 7;
+    double w2_avg = (double)w2_total / 7;
+
+    printf("WEEK1 Daily Average : %.2lf minutes/day\n", w1_avg);
+    printf("WEEK2 Daily Average : %.2lf minutes/day\n", w2_avg);
+
+    printf("----------------------------------------------\n");
+
+    // per-category breakdown
+    for(i=0; i<n; i++){
+        printf("%s : Week1=%d  Week2=%d\n", categories[i], week1[i], week2[i]);
+    }
+
+    printf("----------------------------------------------\n");
+
+    // per-category trend
+    for(i=0; i<n; i++){
+        if(week2[i] > week1[i]){
+            printf("%s : INCREASED\n", categories[i]);
+        }
+        else if(week2[i] < week1[i]){
+            printf("%s : DECREASED\n", categories[i]);
+        }
+        else{
+            printf("%s : NO CHANGE\n", categories[i]);
+        }
+    }
+
+    printf("----------------------------------------------\n");
+
+    return;
 }
+
+
 
 // ============================================================
 // ASSESSMENT 2
