@@ -5,8 +5,8 @@
 // Solent University — Computer Science Foundation 2025/26
 // ============================================================
 // Week 3  — Assessment 1 : Weekly Screen-Time Tracker
-// Week 4  — Assessment 2 : (coming)
-// Week 5  — Assessment 3 : (coming)
+// Week 4  — Assessment 2 : City Aquarium Ticketing
+// Week 5  — Assessment 3 : Hydration Tracker Loop Challenge
 // Week 6  — Assessment 4 : (coming)
 // Week 8  — Assessment 5 : (coming)
 // Week 9  — Assessment 6 : (coming)
@@ -49,34 +49,33 @@ void assessment1_d() {
 void assessment1_c() {
     printf("Assessment 1 - C Grade (50-59) completed 08 March 2026 16:25\n\n");
     int social_media;
-   int youtube;
-   int games;
-   int daily_limit=120;
+    int youtube;
+    int games;
+    int daily_limit=120;
    
-   printf("Enter your Daily Screen Time for Social Media    (Minutes):"); scanf(" %d",&social_media);
-   if (social_media<0)
-   {
+    printf("Enter your Daily Screen Time for Social Media    (Minutes):"); 
+    scanf(" %d",&social_media);
+    if (social_media<0)
+    {
        printf("Error!!! Negative numbers are invalid! Please enter valid numbers...\n********************************************************************");
        return;
-   }
+    }
    
-   
-   printf("Enter your Daily Screen Time for YouTube         (Minutes):"); scanf(" %d",&youtube);
-   if (youtube<0)
-   {
+    printf("Enter your Daily Screen Time for YouTube         (Minutes):"); 
+    scanf(" %d",&youtube);
+    if (youtube<0)
+    {
        printf("Error!!! Negative numbers are invalid! Please enter valid numbers...\n********************************************************************");
        return;
-   }
+    }
    
-   
-   printf("Enter your Daily Screen Time for Games           (Minutes):"); scanf(" %d",&games);
-   
-   if (games<0)
-   {
+    printf("Enter your Daily Screen Time for Games           (Minutes):"); 
+    scanf(" %d",&games);
+    if (games<0)
+    {
        printf("Error!!! Negative numbers are invalid! Please enter valid numbers...\n********************************************************************");
        return;
-   }
-   
+    }
     printf("-----------------------------------------------------\n");
     printf("-----------------------------------------------------\n");
    
@@ -85,30 +84,24 @@ void assessment1_c() {
    int weekly_total_minutes_games=7*games;
    int weekly_total_minutes= weekly_total_minutes_social_media+ weekly_total_minutes_youtube+ weekly_total_minutes_games;
    
-   
-   
-   
-   printf("Total Weekly Screen Time :%d     Minutes / Week\n", weekly_total_minutes);
-   printf("-----------------------------------------------------\n");
-   printf("\nSocial Media             :%d      Minutes / Week\nYouTube                  :%d      Minutes / Week\nGames                    :%d      Minutes / Week",weekly_total_minutes_social_media,  weekly_total_minutes_youtube, weekly_total_minutes_games);
- printf("\n-----------------------------------------------------\n");
- double daily_average=(double)weekly_total_minutes/7;
- printf("Daily Average Screen Time :%.2lf    Minutes / Day", daily_average);
- printf("\nDaily Safe Limit is          :%d      Minutes / Day", daily_limit);
-  printf("\n-----------------------------------------------------\n");
+    printf("Total Weekly Screen Time :%d     Minutes / Week\n", weekly_total_minutes);
+    printf("-----------------------------------------------------\n");
+    printf("\nSocial Media             :%d      Minutes / Week\nYouTube                  :%d      Minutes / Week\nGames                    :%d      Minutes / Week",weekly_total_minutes_social_media,  weekly_total_minutes_youtube, weekly_total_minutes_games);
+    printf("\n-----------------------------------------------------\n");
+    
+    double daily_average=(double)weekly_total_minutes/7;
+    printf("Daily Average Screen Time :%.2lf    Minutes / Day", daily_average);
+    printf("\nDaily Safe Limit is          :%d      Minutes / Day", daily_limit);
+    printf("\n-----------------------------------------------------\n");
  
- if (daily_limit>=daily_average)
- {
+    if (daily_limit>=daily_average)
+    {
      printf("\nYou are 'Within Recommended Limit'");
- }
- else
- printf("\nIMPORTANT! You are 'Above Recommended Limit'!!!\n***********************************************");
- 
- 
- 
-  printf("\n-----------------------------------------------------\n");
- 
- 
+    }
+    else
+    printf("\nIMPORTANT! You are 'Above Recommended Limit'!!!\n***********************************************");
+    
+    printf("\n-----------------------------------------------------\n");
 }
 
 // B Grade (60-69) — Multi-Week Tracking and Comparison
@@ -161,48 +154,48 @@ void assessment1_b() {
        printf("Error!!! Negative numbers are invalid! Please enter valid numbers...\n********************************************************************");
        return;
    }
-   
-    printf("-----------------------------------------------------\n");
-    printf("-----------------------------------------------------\n");
-   
-   int w1_total=social_media_w1+youtube_w1+games_w1;
-   int w2_total=social_media_w2+youtube_w2+games_w2;
-   int w12_total=w1_total+w2_total;
-   printf("Total Week1 Screen Time :%d      Minutes / Week\n", w1_total);
-   printf("Total Week2 Screen Time :%d     Minutes / Week\n", w2_total);
-   
-   printf("---------------------------\n");
-   printf("Total W1+W2 Screen Time :%d     Minutes in Two Weeks\n", w12_total);
-  
-   printf("-----------------------------------------------------\n");
-double percentage_change = ((double)(w2_total - w1_total) / w1_total) * 100;
-if (w2_total > w1_total) {
-    printf("Overall Usage: INCREASED in Week 2 (%.2lf%% increase)\n", percentage_change);
-}
-else if (w2_total < w1_total) {
-    printf("Overall Usage: DECREASED in Week 2 (%.2lf%% decrease)\n", -percentage_change);
-}
-else {
-    printf("Overall Usage: STAYED THE SAME across both weeks (0%% change)\n");
-}
 
- printf("-----------------------------------------------------\n");
+    printf("-----------------------------------------------------\n");
+    printf("-----------------------------------------------------\n");
+   
+    int w1_total=social_media_w1+youtube_w1+games_w1;
+    int w2_total=social_media_w2+youtube_w2+games_w2;
+    int w12_total=w1_total+w2_total;
+    printf("Total Week1 Screen Time :%d      Minutes / Week\n", w1_total);
+    printf("Total Week2 Screen Time :%d     Minutes / Week\n", w2_total);
+   
+    printf("---------------------------\n");
+    printf("Total W1+W2 Screen Time :%d     Minutes in Two Weeks\n", w12_total);
+  
+    printf("-----------------------------------------------------\n");
+    double percentage_change = ((double)(w2_total - w1_total) / w1_total) * 100;
+    if (w2_total > w1_total) {
+        printf("Overall Usage: INCREASED in Week 2 (%.2lf%% increase)\n", percentage_change);
+    }
+    else if (w2_total < w1_total) {
+        printf("Overall Usage: DECREASED in Week 2 (%.2lf%% decrease)\n", -percentage_change);
+    }
+    else {
+        printf("Overall Usage: STAYED THE SAME across both weeks (0%% change)\n");
+    }
+
+    printf("-----------------------------------------------------\n");
  
    int social_media_w12=social_media_w1+social_media_w2;
    int youtube_w12= youtube_w1+ youtube_w2;
    int games_w12=games_w1+games_w2;
    
-   printf("\nSocial Media             :%d      Minutes in Two Weeks\nYouTube                  :%d      Minutes in Two Weeks\nGames                    :%d      Minutes in Two Weeks",social_media_w12, youtube_w12, games_w12);
- printf("\n-----------------------------------------------------\n");
+    printf("\nSocial Media             :%d      Minutes in Two Weeks\nYouTube                  :%d      Minutes in Two Weeks\nGames                    :%d      Minutes in Two Weeks",social_media_w12, youtube_w12, games_w12);
+    printf("\n-----------------------------------------------------\n");
  
- double w1_daily_average=(double)w1_total/7;
- double w2_daily_average=(double)w2_total/7;
- double w12_daily_average=(double)w12_total/14;
- printf("WEEK 1 Daily Average Screen Time :%.2lf  Minutes / Day\n", w1_daily_average);
- printf("WEEK 2 Daily Average Screen Time :%.2lf  Minutes / Day\n", w2_daily_average);
- printf("Combined Two-Week Daily Average Screen Time :%.2lf  Minutes / Day\n", w12_daily_average);
- printf("\nRecommended Daily Screen Time Limit      :%d      Minutes / Day", daily_limit);
-  printf("\n-----------------------------------------------------\n");
+    double w1_daily_average=(double)w1_total/7;
+    double w2_daily_average=(double)w2_total/7;
+    double w12_daily_average=(double)w12_total/14;
+    printf("WEEK 1 Daily Average Screen Time :%.2lf  Minutes / Day\n", w1_daily_average);
+    printf("WEEK 2 Daily Average Screen Time :%.2lf  Minutes / Day\n", w2_daily_average);
+    printf("Combined Two-Week Daily Average Screen Time :%.2lf  Minutes / Day\n", w12_daily_average);
+    printf("\nRecommended Daily Screen Time Limit      :%d      Minutes / Day", daily_limit);
+    printf("\n-----------------------------------------------------\n");
 
  if (daily_limit>=w1_daily_average)
  {
@@ -210,7 +203,8 @@ else {
  }
  else
  printf("\nIMPORTANT! You are 'Above Recommended Limit' for WEEK1 !!!\n***********************************************");
-  printf("\n-----------------------------------------------------\n");
+
+ printf("\n-----------------------------------------------------\n");
   
  if (daily_limit>=w2_daily_average)
  {
@@ -218,7 +212,8 @@ else {
  }
  else
  printf("\nIMPORTANT! You are 'Above Recommended Limit' for WEEK2 !!!\n***********************************************");
-  printf("\n-----------------------------------------------------\n");
+
+ printf("\n-----------------------------------------------------\n");
   
  if (daily_limit>=w12_daily_average)
  {
@@ -226,7 +221,8 @@ else {
  }
  else
  printf("\nIMPORTANT! You are 'Above Recommended Limit' for Combined Two Weeks !!!\n***********************************************");
-  printf("\n-----------------------------------------------------\n");
+
+ printf("\n-----------------------------------------------------\n");
   
     return;
 }
@@ -241,7 +237,7 @@ else {
 // - Print detailed breakdown per week
 // - Compare Week 1 vs Week 2 per category: Increase, Decrease, No change
 void assessment1_a() {
-    printf("Assessment 1 - A Grade (70-100) completed 10 March 2026 23:44 — requires arrays\n");
+    printf("Assessment 1 - A Grade (70-100) completed 15 March 2026 20:30 \n");
 
 int n;
     printf("How many categories do you want to track? : ");
@@ -250,7 +246,6 @@ int n;
     char categories[50][50];
     int week1[50];
     int week2[50];
-
     int i;
 
     // category names
@@ -263,7 +258,9 @@ int n;
     for(i=0; i<n; i++){
         printf("Enter minutes for %s (WEEK1):", categories[i]);
         scanf("%d", &week1[i]);
-        if(week1[i] < 0){
+        
+        if(week1[i] < 0)
+        {
             printf("Error! Negative numbers not allowed.\n");
             return;
         }
@@ -273,6 +270,7 @@ int n;
     for(i=0; i<n; i++){
         printf("Enter minutes for %s (WEEK2):", categories[i]);
         scanf("%d", &week2[i]);
+        
         if(week2[i] < 0){
             printf("Error! Negative numbers not allowed.\n");
             return;
@@ -326,21 +324,86 @@ int n;
 }
 
 
-
 // ============================================================
-// ASSESSMENT 2
-// Week 4 | Topic: (coming)
+// ASSESSMENT 2 — City Aquarium Ticketing
+// Week 4 | Topic: Switch/Case
 // ============================================================
 
-void assessment2_d() { printf("Assessment 2 - D Grade coming soon\n"); }
+
+// D Grade (40-49) — Basic Ticket Price Calculation, Fixed Prices
+// - Fixed values for zone and ticketType (no user input)
+// - switch statement to determine ticket price
+// - Display zone, ticket type and price
+void assessment2_d() { printf("Assessment 2 - D Grade completed on 16 March 2026 15:47 \n");
+
+
+    char zone = 'S';
+    char ticketType = 'N';
+    float ticketPrice = 0;
+
+    switch(zone) {
+        case 'S':
+            if(ticketType == 'N')
+                ticketPrice = 22;
+            else if(ticketType == 'E')
+                ticketPrice = 32;
+            printf("Zone: Sharks\n");
+            break;
+        case 'R':
+            if(ticketType == 'N')
+                ticketPrice = 18;
+            else if(ticketType == 'E')
+                ticketPrice = 28;
+            printf("Zone: Reefs\n");
+            break;
+        case 'P':
+            if(ticketType == 'N')
+                ticketPrice = 16;
+            else if(ticketType == 'E')
+                ticketPrice = 26;
+            printf("Zone: Penguins\n");
+            break;
+        default:
+            printf("Invalid zone\n");
+            return;
+    }
+
+    if(ticketType == 'N')
+        printf("Ticket Type: Standard\n");
+    else if(ticketType == 'E')
+        printf("Ticket Type: Express\n");
+
+    printf("Ticket Price: £%.2f\n", ticketPrice);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 void assessment2_c() { printf("Assessment 2 - C Grade coming soon\n"); }
 void assessment2_b() { printf("Assessment 2 - B Grade coming soon\n"); }
 void assessment2_a() { printf("Assessment 2 - A Grade coming soon\n"); }
 
+
 // ============================================================
-// ASSESSMENT 3
-// Week 5 | Topic: (coming)
+// ASSESSMENT 3 — Hydration Tracker Loop Challenge
+// Week 5 | Topic: Conversions and Loops
 // ============================================================
+
+// D Grade (40-49) — Basic Conversion
+// - User inputs ml for one day
+// - Convert to litres and cups
+// - Display results
+
+
+
 
 void assessment3_d() { printf("Assessment 3 - D Grade coming soon\n"); }
 void assessment3_c() { printf("Assessment 3 - C Grade coming soon\n"); }
@@ -401,8 +464,11 @@ int main() {
     printf("========================================\n");
     printf("\n--- SELECT ASSESSMENT ---\n");
     printf(" 1  - Assessment 1 (Week 3)  : Weekly Screen-Time Tracker\n");
-    printf(" 2  - Assessment 2 (Week 4)  : Coming soon\n");
-    printf(" 3  - Assessment 3 (Week 5)  : Coming soon\n");
+    printf(" 2  - Assessment 2 (Week 4)  : City Aquarium Ticketing\n");
+    printf(" 3  - Assessment 3 (Week 5)  : Hydration Tracker Loop Challenge\n");
+    
+    
+    
     printf(" 4  - Assessment 4 (Week 6)  : Coming soon\n");
     printf(" 5  - Assessment 5 (Week 8)  : Coming soon\n");
     printf(" 6  - Assessment 6 (Week 9)  : Coming soon\n");
