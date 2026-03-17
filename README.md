@@ -1,3 +1,4 @@
+
 # Problem Solving — Assessment Portfolio
 ### Mehmet Kaygusuz
 
@@ -34,9 +35,9 @@ problem-solving-assessments/
 
 | Assessment | Week | Topic | Status |
 |---|---|---|---|
-| Assessment 1 | Week 3 | Variables and Operators — Weekly Screen-Time Tracker | 🔄 In progress |
-| Assessment 2 | Week 4 | Coming soon | ⏳ |
-| Assessment 3 | Week 5 | Coming soon | ⏳ |
+| Assessment 1 | Week 3 | Variables and Operators — Weekly Screen-Time Tracker | ✅ Completed |
+| Assessment 2 | Week 4 | Switch/Case — City Aquarium Ticketing | 🔄 In progress |
+| Assessment 3 | Week 5 | Conversions and Loops — Hydration Tracker | 🔄 In progress |
 | Assessment 4 | Week 6 | Coming soon | ⏳ |
 | Assessment 5 | Week 8 | Coming soon | ⏳ |
 | Assessment 6 | Week 9 | Coming soon | ⏳ |
@@ -60,8 +61,8 @@ All assessments are contained in a single file, accessible via an interactive me
 
 --- SELECT ASSESSMENT ---
  1  - Assessment 1 (Week 3)  : Weekly Screen-Time Tracker
- 2  - Assessment 2 (Week 4)  : Coming soon
- 3  - Assessment 3 (Week 5)  : Coming soon
+ 2  - Assessment 2 (Week 4)  : City Aquarium Ticketing
+ 3  - Assessment 3 (Week 5)  : Hydration Tracker Loop Challenge
  4  - Assessment 4 (Week 6)  : Coming soon
  5  - Assessment 5 (Week 8)  : Coming soon
  6  - Assessment 6 (Week 9)  : Coming soon
