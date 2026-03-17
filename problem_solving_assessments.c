@@ -376,6 +376,82 @@ void assessment2_d() { printf("Assessment 2 - D Grade completed on 16 March 2026
     printf("Ticket Price: £%.2f\n", ticketPrice);
 }
 
+// ============================================================
+// ASSESSMENT 2 — COMMON FUNCTION
+// getTicketPrice() — used in C, B and A grade
+// Returns 1 if valid zone and ticketType, 0 if invalid
+// ============================================================
+
+int getTicketPrice(char zone, char ticketType, float *price) {
+
+    switch(zone) {
+
+        case 'S': case 's':
+            if(ticketType == 'N' || ticketType == 'n') *price = 22;
+            else if(ticketType == 'E' || ticketType == 'e') *price = 32;
+            else return 0;
+            break;
+
+        case 'R': case 'r':
+            if(ticketType == 'N' || ticketType == 'n') *price = 18;
+            else if(ticketType == 'E' || ticketType == 'e') *price = 28;
+            else return 0;
+            break;
+
+        case 'P': case 'p':
+            if(ticketType == 'N' || ticketType == 'n') *price = 16;
+            else if(ticketType == 'E' || ticketType == 'e') *price = 26;
+            else return 0;
+            break;
+
+        default:
+            return 0;
+    }
+
+    return 1;
+}
+
+
+// C Grade (50-59) — User Input and Multi-Ticket Total
+// - User inputs zone, ticket type and number of tickets
+// - Validate ticket quantity > 0
+// - Use getTicketPrice() to determine price per ticket
+// - Display zone, ticket type, quantity and total cost
+
+void assessment2_c() { printf("Assessment 2 - C Grade completed on  17 March 2026 10:09\n");
+
+    char zone, ticketType;
+    int tickets;
+    float price, total;
+
+    printf("\n[Grade C Demo]\n");
+
+    printf("Enter Zone (S/R/P): ");
+    scanf(" %c", &zone);
+
+    printf("Enter Ticket Type (N/E): ");
+    scanf(" %c", &ticketType);
+
+    printf("Enter Number of Tickets: ");
+    scanf("%d", &tickets);
+
+    if(tickets <= 0) {
+        printf("Error: Tickets must be greater than 0.\n");
+        return;
+    }
+
+    if(!getTicketPrice(zone, ticketType, &price)) {
+        printf("Error: Invalid input.\n");
+        return;
+    }
+
+    total = price * tickets;
+
+    printf("\nZone: %c\n", zone);
+    printf("Ticket Type: %c\n", ticketType);
+    printf("Tickets: %d\n", tickets);
+    printf("Total Cost: £%.2f\n", total);
+}
 
 
 
@@ -387,8 +463,17 @@ void assessment2_d() { printf("Assessment 2 - D Grade completed on 16 March 2026
 
 
 
-void assessment2_c() { printf("Assessment 2 - C Grade coming soon\n"); }
-void assessment2_b() { printf("Assessment 2 - B Grade coming soon\n"); }
+void assessment2_b() { printf("Assessment 2 - B Grade completed on  March 2026\n"); }
+
+
+
+
+
+
+
+
+
+
 void assessment2_a() { printf("Assessment 2 - A Grade coming soon\n"); }
 
 
