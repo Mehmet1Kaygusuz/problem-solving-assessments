@@ -455,15 +455,75 @@ void assessment2_c() { printf("Assessment 2 - C Grade completed on  17 March 202
 
 
 
+// ============================================================
+// B Grade (60-69) — Bulk Discount and Optional Add-On
+// - Bulk discount: tickets > 5 → 15% discount
+// - Optional audio guide: £4.50 per ticket
+// - Display total before discount, discount amount, add-on and final total
+// - Input validation for all fields
+void assessment2_b() {
+    printf("Assessment 2 - B Grade completed on 18 March 2026 09:19\n");
+
+    char zone, ticketType, audio;
+    int tickets;
+    float price, totalBefore, discount = 0, addon = 0, finalTotal;
+
+    printf("Enter Zone (S/R/P): ");
+    scanf(" %c", &zone);
+
+    printf("Enter Ticket Type (N/E): ");
+    scanf(" %c", &ticketType);
+
+    printf("Enter Number of Tickets: ");
+    scanf("%d", &tickets);
+
+    if(tickets <= 0) {
+        printf("Error: Tickets must be greater than 0.\n");
+        return;
+    }
+
+    if(!getTicketPrice(zone, ticketType, &price)) {
+        printf("Error: Invalid input.\n");
+        return;
+    }
+
+    totalBefore = price * tickets;
+
+    if(tickets > 5) {
+        discount = totalBefore * 0.15;
+    }
+
+    printf("Audio Guide? (y/n): ");
+    scanf(" %c", &audio);
+
+    if(audio == 'y' || audio == 'Y') {
+        addon = 4.50 * tickets;
+    }
+
+    finalTotal = totalBefore - discount + addon;
+
+    printf("\n--- Summary ---\n");
+
+ // Print full zone name instead of just the letter
+    if(zone == 'S' || zone == 's') printf("Zone: Sharks\n");
+    else if(zone == 'R' || zone == 'r') printf("Zone: Reefs\n");
+    else if(zone == 'P' || zone == 'p') printf("Zone: Penguins\n");
+
+    // Print full ticket type name instead of just the letter
+    if(ticketType == 'N' || ticketType == 'n') printf("Ticket Type: Standard\n");
+    else if(ticketType == 'E' || ticketType == 'e') printf("Ticket Type: Express\n");
+
+    printf("Tickets: %d\n", tickets);
 
 
 
+    printf("Total Before Discount: £%.2f\n", totalBefore);
+    printf("Bulk Discount (15%%): -£%.2f\n", discount);
+    printf("Add-on Cost: £%.2f\n", addon);
+    printf("Final Total: £%.2f\n", finalTotal);
+}
 
 
-
-
-
-void assessment2_b() { printf("Assessment 2 - B Grade completed on  March 2026\n"); }
 
 
 
