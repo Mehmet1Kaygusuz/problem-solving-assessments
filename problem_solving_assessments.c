@@ -447,8 +447,19 @@ void assessment2_c() { printf("Assessment 2 - C Grade completed on  17 March 202
 
     total = price * tickets;
 
-    printf("\nZone: %c\n", zone);
-    printf("Ticket Type: %c\n", ticketType);
+
+    
+    if(zone == 'S' || zone == 's') printf("\nZone: Sharks\n");
+else if(zone == 'R' || zone == 'r') printf("\nZone: Reefs\n");
+else if(zone == 'P' || zone == 'p') printf("\nZone: Penguins\n");
+
+if(ticketType == 'N' || ticketType == 'n') printf("Ticket Type: Standard\n");
+else if(ticketType == 'E' || ticketType == 'e') printf("Ticket Type: Express\n");
+    
+    
+    
+    
+    
     printf("Tickets: %d\n", tickets);
     printf("Total Cost: £%.2f\n", total);
 }
@@ -528,13 +539,84 @@ void assessment2_b() {
 
 
 
+// ============================================================
+// ASSESSMENT 2 — HELPER FUNCTION
+// viewPrices() — displays the full ticket price table
+// Used in A grade menu — Option 2
+// ============================================================
+void viewPrices() {
+
+    printf("\n--- Ticket Prices ---\n");
+    printf("Sharks:   Standard £22 | Express £32\n");
+    printf("Reefs:    Standard £18 | Express £28\n");
+    printf("Penguins: Standard £16 | Express £26\n");
+}
+
+
+
+void assessment2_a() { printf("Assessment 2 - A Grade completed on 19 March 2026 08:55\n"); 
+
+
+
+
+// A Grade (70-100) — Menu-Driven System
+// - Menu with switch: Book Tickets, View Prices, Exit
+// - Loop repeats until user selects Exit
+// - Input validation for all inputs
+// - Calls assessment2_b() for booking, viewPrices() for price table
+
+    int choice;
+
+
+    do {
+
+        printf("\n--- City Aquarium Ticketing ---\n");
+        printf("1. Book Tickets\n");
+        printf("2. View Ticket Prices\n");
+    
+        printf("3. Exit\n");
+
+        printf("Enter choice: ");
+        scanf("%d", &choice);
+
+        switch(choice) {
+
+            case 1:
+                assessment2_b();
+                break;
+
+            case 2:
+                viewPrices();
+                break;
+
+            case 3:
+                printf("Exiting...\n");
+                break;
+
+            default:
+                printf("Invalid choice.\n");
+        }
+
+    } while(choice != 3);
+
+
+}
 
 
 
 
 
 
-void assessment2_a() { printf("Assessment 2 - A Grade coming soon\n"); }
+
+
+
+
+
+
+
+
+
+
 
 
 // ============================================================
