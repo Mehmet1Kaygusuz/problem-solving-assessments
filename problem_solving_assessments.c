@@ -630,10 +630,38 @@ void assessment2_a() { printf("Assessment 2 - A Grade completed on 19 March 2026
 // - Display results
 
 
+void assessment3_d() { printf("Assessment 3 - D Grade completed on 20 March 2026 09:08\n");
+
+float ml;
+    float litres;
+    float cups;
+
+    printf("Enter water intake for today (ml): ");
+    scanf("%f", &ml);
+
+    // ml → litre dönüşümü
+    litres = ml / 1000;
+
+    // ml → cup dönüşümü
+    cups = ml / 240;
+
+    printf("Litres: %.2f L\n", litres);
+    printf("Cups (240 ml): %.2f cups\n", cups);
 
 
-void assessment3_d() { printf("Assessment 3 - D Grade coming soon\n"); }
+}
+
+
+
+
 void assessment3_c() { printf("Assessment 3 - C Grade coming soon\n"); }
+
+
+
+
+
+
+
 void assessment3_b() { printf("Assessment 3 - B Grade coming soon\n"); }
 void assessment3_a() { printf("Assessment 3 - A Grade coming soon\n"); }
 
