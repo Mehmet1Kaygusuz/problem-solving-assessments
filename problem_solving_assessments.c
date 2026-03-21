@@ -1,9 +1,16 @@
-// ============================================================
+// Started this portfolio on 08 March 2026
+// Each assessment completed through personal study outside of class
+// All code written manually — no copy-paste, no AI generation
+// Total lines of code : 813
+// Total assessments   : 7
+// Completion date     : June 2026 (expected)
+
+// ========================================================================================================================
 // QH0305 — Problem Solving
 // Assessment Portfolio
 // Author : Mehmet Kaygusuz
 // Solent University — Computer Science Foundation 2025/26
-// ============================================================
+// ========================================================================================================================
 // Week 3  — Assessment 1 : Weekly Screen-Time Tracker
 // Week 4  — Assessment 2 : City Aquarium Ticketing
 // Week 5  — Assessment 3 : Hydration Tracker Loop Challenge
@@ -11,43 +18,44 @@
 // Week 8  — Assessment 5 : (coming)
 // Week 9  — Assessment 6 : (coming)
 // Week 11 — Assessment 7 : (coming)
-//           Reflective Statement : Word document — 1000 words
-// ============================================================
+// Reflective Statement   : Word document — 1000 words
+// ========================================================================================================================
 
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
-// ============================================================
+// ========================================================================================================================
 // ASSESSMENT 1 — Weekly Screen-Time Tracker
 // Week 3 | Topic: Variables and Operators
-// ============================================================
+// ========================================================================================================================
 
-// D Grade (40-49) — Basic Weekly Total
+// 1-D Grade (40-49) — Basic Weekly Total
 // - Three categories, values assigned directly in code (no user input)
 // - Calculate and print total screen time for one week (in minutes)
 // - Display a clear label for each category and the total
-void assessment1_d() {
-    printf("Assessment 1 - D Grade (40-49) completed 08 March 2026 15:35\n");
+
+void assessment1_d() {printf("Assessment 1 - D Grade (40-49) completed 08 March 2026 15:35\n");
    int social_media=120;
    int youtube=250;
    int games=450;
    int total_minutes;
    total_minutes=social_media+youtube+games;
+
    printf("Total Weekly Screen Time :%d Minutes\n", total_minutes);
    printf("-------------------------------------");
    printf("\nSocial Media             :%d Minutes\nYouTube                  :%d Minutes\nGames                    :%d Minutes",social_media, youtube, games);
  printf("\n-------------------------------------");
 }
 
-// C Grade (50-59) — User Input and Daily Average Check
+// 1-C Grade (50-59) — User Input and Daily Average Check
 // - User inputs minutes for three categories
 // - Calculate daily average
 // - Compare with recommended limit
 // - Print whether within or above recommended limit
 // - Validate: if any input is negative, show error and stop
-void assessment1_c() {
-    printf("Assessment 1 - C Grade (50-59) completed 08 March 2026 16:25\n\n");
+
+void assessment1_c() {printf("Assessment 1 - C Grade (50-59) completed 08 March 2026 16:25\n\n");
     int social_media;
     int youtube;
     int games;
@@ -104,13 +112,13 @@ void assessment1_c() {
     printf("\n-----------------------------------------------------\n");
 }
 
-// B Grade (60-69) — Multi-Week Tracking and Comparison
+// 1-B Grade (60-69) — Multi-Week Tracking and Comparison
 // - User inputs minutes for three categories across two weeks
 // - Calculate total and daily average for each week
 // - State whether each week is within or above recommended limit
 // - Compare two weeks: increased, decreased, or stayed the same
-void assessment1_b() {
-    printf("Assessment 1 - B Grade (60-69) completed 08 March 2026 21:42\n");
+
+void assessment1_b() {printf("Assessment 1 - B Grade (60-69) completed 08 March 2026 21:42\n");
    int social_media_w1;
    int social_media_w2;
    int youtube_w1;
@@ -161,6 +169,7 @@ void assessment1_b() {
     int w1_total=social_media_w1+youtube_w1+games_w1;
     int w2_total=social_media_w2+youtube_w2+games_w2;
     int w12_total=w1_total+w2_total;
+    
     printf("Total Week1 Screen Time :%d      Minutes / Week\n", w1_total);
     printf("Total Week2 Screen Time :%d     Minutes / Week\n", w2_total);
    
@@ -168,6 +177,7 @@ void assessment1_b() {
     printf("Total W1+W2 Screen Time :%d     Minutes in Two Weeks\n", w12_total);
   
     printf("-----------------------------------------------------\n");
+    
     double percentage_change = ((double)(w2_total - w1_total) / w1_total) * 100;
     if (w2_total > w1_total) {
         printf("Overall Usage: INCREASED in Week 2 (%.2lf%% increase)\n", percentage_change);
@@ -191,14 +201,14 @@ void assessment1_b() {
     double w1_daily_average=(double)w1_total/7;
     double w2_daily_average=(double)w2_total/7;
     double w12_daily_average=(double)w12_total/14;
+
     printf("WEEK 1 Daily Average Screen Time :%.2lf  Minutes / Day\n", w1_daily_average);
     printf("WEEK 2 Daily Average Screen Time :%.2lf  Minutes / Day\n", w2_daily_average);
     printf("Combined Two-Week Daily Average Screen Time :%.2lf  Minutes / Day\n", w12_daily_average);
     printf("\nRecommended Daily Screen Time Limit      :%d      Minutes / Day", daily_limit);
     printf("\n-----------------------------------------------------\n");
 
- if (daily_limit>=w1_daily_average)
- {
+ if (daily_limit>=w1_daily_average){
      printf("\nYou are 'Within Recommended Limit' for WEEK1");
  }
  else
@@ -206,8 +216,7 @@ void assessment1_b() {
 
  printf("\n-----------------------------------------------------\n");
   
- if (daily_limit>=w2_daily_average)
- {
+ if (daily_limit>=w2_daily_average){
      printf("\nYou are 'Within Recommended Limit' for WEEK2");
  }
  else
@@ -215,33 +224,27 @@ void assessment1_b() {
 
  printf("\n-----------------------------------------------------\n");
   
- if (daily_limit>=w12_daily_average)
- {
+ if (daily_limit>=w12_daily_average){
      printf("\nYou are 'Within Recommended Limit' for Combined Two Weeks");
  }
  else
  printf("\nIMPORTANT! You are 'Above Recommended Limit' for Combined Two Weeks !!!\n***********************************************");
 
  printf("\n-----------------------------------------------------\n");
-  
     return;
 }
 
-
-
-// A Grade (70-100) — Dynamic Categories and Per-Category Trends
-// NOTE: This grade requires arrays — will be completed after arrays topic
+// 1-A Grade (70-100) — Dynamic Categories and Per-Category Trends
 // - User specifies number of categories dynamically
 // - User enters name of each category
 // - Collect minutes for two weeks per category
 // - Print detailed breakdown per week
 // - Compare Week 1 vs Week 2 per category: Increase, Decrease, No change
-void assessment1_a() {
-    printf("Assessment 1 - A Grade (70-100) completed 15 March 2026 20:30 \n");
+
+void assessment1_a() {printf("Assessment 1 - A Grade (70-100) completed 15 March 2026 20:30 \n");
 
 int n;
-    printf("How many categories do you want to track? : ");
-    scanf("%d", &n);
+    printf("How many categories do you want to track? : "); scanf("%d", &n);
 
     char categories[50][50];
     int week1[50];
@@ -259,8 +262,7 @@ int n;
         printf("Enter minutes for %s (WEEK1):", categories[i]);
         scanf("%d", &week1[i]);
         
-        if(week1[i] < 0)
-        {
+        if(week1[i] < 0){
             printf("Error! Negative numbers not allowed.\n");
             return;
         }
@@ -323,19 +325,26 @@ int n;
     return;
 }
 
+// ------------------------------------------------------------------------------------------------------------------------
+// 📝 Personal note — Assessment 1
+// Variables and operators felt straightforward at first.
+// The real challenge was understanding data types — using double
+// instead of int for daily averages to avoid losing decimal precision.
+// Assessment 1-A was completed after learning arrays in class —
+// a good example of how new knowledge unlocks harder problems.
+// ------------------------------------------------------------------------------------------------------------------------
 
-// ============================================================
+// ========================================================================================================================
 // ASSESSMENT 2 — City Aquarium Ticketing
 // Week 4 | Topic: Switch/Case
-// ============================================================
+// ========================================================================================================================
 
-
-// D Grade (40-49) — Basic Ticket Price Calculation, Fixed Prices
+// 2-D Grade (40-49) — Basic Ticket Price Calculation, Fixed Prices
 // - Fixed values for zone and ticketType (no user input)
 // - switch statement to determine ticket price
 // - Display zone, ticket type and price
-void assessment2_d() { printf("Assessment 2 - D Grade completed on 16 March 2026 15:47 \n");
 
+void assessment2_d() { printf("Assessment 2 - D Grade completed on 16 March 2026 15:47 \n");
 
     char zone = 'S';
     char ticketType = 'N';
@@ -407,12 +416,10 @@ int getTicketPrice(char zone, char ticketType, float *price) {
         default:
             return 0;
     }
-
     return 1;
 }
 
-
-// C Grade (50-59) — User Input and Multi-Ticket Total
+// 2-C Grade (50-59) — User Input and Multi-Ticket Total
 // - User inputs zone, ticket type and number of tickets
 // - Validate ticket quantity > 0
 // - Use getTicketPrice() to determine price per ticket
@@ -425,15 +432,9 @@ void assessment2_c() { printf("Assessment 2 - C Grade completed on  17 March 202
     float price, total;
 
     printf("\n[Grade C Demo]\n");
-
-    printf("Enter Zone (S/R/P): ");
-    scanf(" %c", &zone);
-
-    printf("Enter Ticket Type (N/E): ");
-    scanf(" %c", &ticketType);
-
-    printf("Enter Number of Tickets: ");
-    scanf("%d", &tickets);
+    printf("Enter Zone (S/R/P): ");         scanf(" %c", &zone);
+    printf("Enter Ticket Type (N/E): ");    scanf(" %c", &ticketType);
+    printf("Enter Number of Tickets: ");    scanf("%d", &tickets);
 
     if(tickets <= 0) {
         printf("Error: Tickets must be greater than 0.\n");
@@ -447,46 +448,32 @@ void assessment2_c() { printf("Assessment 2 - C Grade completed on  17 March 202
 
     total = price * tickets;
 
-
-    
     if(zone == 'S' || zone == 's') printf("\nZone: Sharks\n");
-else if(zone == 'R' || zone == 'r') printf("\nZone: Reefs\n");
-else if(zone == 'P' || zone == 'p') printf("\nZone: Penguins\n");
+    else if(zone == 'R' || zone == 'r') printf("\nZone: Reefs\n");
+    else if(zone == 'P' || zone == 'p') printf("\nZone: Penguins\n");
 
-if(ticketType == 'N' || ticketType == 'n') printf("Ticket Type: Standard\n");
-else if(ticketType == 'E' || ticketType == 'e') printf("Ticket Type: Express\n");
-    
-    
-    
-    
+    if(ticketType == 'N' || ticketType == 'n') printf("Ticket Type: Standard\n");
+    else if(ticketType == 'E' || ticketType == 'e') printf("Ticket Type: Express\n");
     
     printf("Tickets: %d\n", tickets);
     printf("Total Cost: £%.2f\n", total);
 }
 
-
-
-// ============================================================
-// B Grade (60-69) — Bulk Discount and Optional Add-On
+// 2-B Grade (60-69) — Bulk Discount and Optional Add-On
 // - Bulk discount: tickets > 5 → 15% discount
 // - Optional audio guide: £4.50 per ticket
 // - Display total before discount, discount amount, add-on and final total
 // - Input validation for all fields
-void assessment2_b() {
-    printf("Assessment 2 - B Grade completed on 18 March 2026 09:19\n");
+
+void assessment2_b() {printf("Assessment 2 - B Grade completed on 18 March 2026 09:19\n");
 
     char zone, ticketType, audio;
     int tickets;
     float price, totalBefore, discount = 0, addon = 0, finalTotal;
 
-    printf("Enter Zone (S/R/P): ");
-    scanf(" %c", &zone);
-
-    printf("Enter Ticket Type (N/E): ");
-    scanf(" %c", &ticketType);
-
-    printf("Enter Number of Tickets: ");
-    scanf("%d", &tickets);
+    printf("Enter Zone (S/R/P): ");         scanf(" %c", &zone);
+    printf("Enter Ticket Type (N/E): ");    scanf(" %c", &ticketType);
+    printf("Enter Number of Tickets: ");    scanf("%d", &tickets);
 
     if(tickets <= 0) {
         printf("Error: Tickets must be greater than 0.\n");
@@ -504,8 +491,7 @@ void assessment2_b() {
         discount = totalBefore * 0.15;
     }
 
-    printf("Audio Guide? (y/n): ");
-    scanf(" %c", &audio);
+    printf("Audio Guide? (y/n): ");         scanf(" %c", &audio);
 
     if(audio == 'y' || audio == 'Y') {
         addon = 4.50 * tickets;
@@ -515,7 +501,7 @@ void assessment2_b() {
 
     printf("\n--- Summary ---\n");
 
- // Print full zone name instead of just the letter
+    // Print full zone name instead of just the letter
     if(zone == 'S' || zone == 's') printf("Zone: Sharks\n");
     else if(zone == 'R' || zone == 'r') printf("Zone: Reefs\n");
     else if(zone == 'P' || zone == 'p') printf("Zone: Penguins\n");
@@ -526,24 +512,18 @@ void assessment2_b() {
 
     printf("Tickets: %d\n", tickets);
 
-
-
     printf("Total Before Discount: £%.2f\n", totalBefore);
     printf("Bulk Discount (15%%): -£%.2f\n", discount);
     printf("Add-on Cost: £%.2f\n", addon);
     printf("Final Total: £%.2f\n", finalTotal);
 }
 
-
-
-
-
-
 // ============================================================
 // ASSESSMENT 2 — HELPER FUNCTION
 // viewPrices() — displays the full ticket price table
 // Used in A grade menu — Option 2
 // ============================================================
+
 void viewPrices() {
 
     printf("\n--- Ticket Prices ---\n");
@@ -552,32 +532,21 @@ void viewPrices() {
     printf("Penguins: Standard £16 | Express £26\n");
 }
 
-
-
-void assessment2_a() { printf("Assessment 2 - A Grade completed on 19 March 2026 08:55\n"); 
-
-
-
-
-// A Grade (70-100) — Menu-Driven System
+// 2-A Grade (70-100) — Menu-Driven System
 // - Menu with switch: Book Tickets, View Prices, Exit
 // - Loop repeats until user selects Exit
 // - Input validation for all inputs
 // - Calls assessment2_b() for booking, viewPrices() for price table
 
+void assessment2_a() { printf("Assessment 2 - A Grade completed on 19 March 2026 08:55\n"); 
+
     int choice;
-
-
     do {
-
         printf("\n--- City Aquarium Ticketing ---\n");
         printf("1. Book Tickets\n");
         printf("2. View Ticket Prices\n");
-    
         printf("3. Exit\n");
-
-        printf("Enter choice: ");
-        scanf("%d", &choice);
+        printf("Enter choice: ");       scanf("%d", &choice);
 
         switch(choice) {
 
@@ -596,39 +565,28 @@ void assessment2_a() { printf("Assessment 2 - A Grade completed on 19 March 2026
             default:
                 printf("Invalid choice.\n");
         }
-
     } while(choice != 3);
-
-
 }
 
+// ------------------------------------------------------------------------------------------------------------------------
+// 📝 Personal note — Assessment 2
+// switch/case was new territory for me.
+// The most challenging part was writing getTicketPrice() —
+// understanding that a function can return an int (1 or 0)
+// and using a pointer (*price) to pass data back was my
+// first real encounter with pointers before the topic was covered.
+// The menu-driven A grade required combining everything learned so far.
+// ------------------------------------------------------------------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ============================================================
+// ========================================================================================================================
 // ASSESSMENT 3 — Hydration Tracker Loop Challenge
 // Week 5 | Topic: Conversions and Loops
-// ============================================================
+// ========================================================================================================================
 
-// D Grade (40-49) — Basic Conversion
+// 3-D Grade (40-49) — Basic Conversion
 // - User inputs ml for one day
 // - Convert to litres and cups
 // - Display results
-
 
 void assessment3_d() { printf("Assessment 3 - D Grade completed on 20 March 2026 09:08\n");
 
@@ -636,78 +594,134 @@ float ml;
     float litres;
     float cups;
 
-    printf("Enter water intake for today (ml): ");
-    scanf("%f", &ml);
+    printf("Enter water intake for today (ml): ");      scanf("%f", &ml);
 
-    // ml → litre dönüşümü
+    // ml to litres conversion
     litres = ml / 1000;
 
-    // ml → cup dönüşümü
+   // ml to cups conversion
     cups = ml / 240;
 
     printf("Litres: %.2f L\n", litres);
     printf("Cups (240 ml): %.2f cups\n", cups);
-
-
 }
 
+// 3-C Grade (50-59) — Multi-Day Tracking
+// - Loop to track multiple days
+// - User enters ml for each day
+// - Display daily litres and cups after each entry
+// - On exit, show total days tracked and total litres
 
+void assessment3_c() { printf("Assessment 3 - C Grade completed on 21 March 2026 07:17\n"); 
+float ml;
+float litres;
+float cups;
 
+    char anotherDay = 'y';
+    int totalDays = 0;
+    float totalLitres = 0;
 
-void assessment3_c() { printf("Assessment 3 - C Grade coming soon\n"); }
+    while(anotherDay == 'y' || anotherDay == 'Y') {
 
+        printf("\nEnter water intake for today (ml): ");    scanf("%f", &ml);
 
+        litres = ml / 1000;
+        cups = ml / 240;
 
+        printf("Litres: %.2f L\n", litres);
+        printf("Cups: %.2f cups\n", cups);
 
+        totalLitres += litres;
+        totalDays++;
 
+        printf("Add another day? (y/n): ");                 scanf(" %c", &anotherDay);
+    }
+    printf("\nYou tracked %d days\n", totalDays);
+    printf("Total: %.2f litres\n", totalLitres);
+}
 
+// 3-B Grade (60-69) — Multi-Type Tracking
+// - Menu: add ml, bottles (500 ml each) or cups (240 ml each)
+// - Convert all inputs to ml, update running totals
+// - On exit, display total ml, total litres, entry count per type
 
 void assessment3_b() { printf("Assessment 3 - B Grade coming soon\n"); }
+
+// 3-A Grade (70-100) — Daily Goal and Environment Factor
+// - User sets a daily hydration goal in litres
+// - Environment factor affects daily target: Cool / Warm / Hot
+// - After each entry, show progress as percentage of goal
+// - On exit, per-day summary, overall totals, longest streak of meeting goal
+// - Robust input validation for all inputs
+
 void assessment3_a() { printf("Assessment 3 - A Grade coming soon\n"); }
 
-// ============================================================
+// ------------------------------------------------------------------------------------------------------------------------
+// 📝 Personal note — Assessment 3 (D & C grade)
+// First time writing a conversion program with user input.
+// Simple but satisfying — ml to litres and cups in a few lines.
+// C grade added the loop — tracking multiple days felt natural after D.
+// ------------------------------------------------------------------------------------------------------------------------
+
+// ========================================================================================================================
 // ASSESSMENT 4
 // Week 6 | Topic: (coming)
-// ============================================================
+// ========================================================================================================================
 
 void assessment4_d() { printf("Assessment 4 - D Grade coming soon\n"); }
 void assessment4_c() { printf("Assessment 4 - C Grade coming soon\n"); }
 void assessment4_b() { printf("Assessment 4 - B Grade coming soon\n"); }
 void assessment4_a() { printf("Assessment 4 - A Grade coming soon\n"); }
 
-// ============================================================
+// ------------------------------------------------------------------------------------------------------------------------
+// 📝 Personal note — Assessment 4 
+// ------------------------------------------------------------------------------------------------------------------------
+
+// ========================================================================================================================
 // ASSESSMENT 5
 // Week 8 | Topic: (coming)
-// ============================================================
+// ========================================================================================================================
 
 void assessment5_d() { printf("Assessment 5 - D Grade coming soon\n"); }
 void assessment5_c() { printf("Assessment 5 - C Grade coming soon\n"); }
 void assessment5_b() { printf("Assessment 5 - B Grade coming soon\n"); }
 void assessment5_a() { printf("Assessment 5 - A Grade coming soon\n"); }
 
-// ============================================================
+// ------------------------------------------------------------------------------------------------------------------------
+// 📝 Personal note — Assessment 5 
+// ------------------------------------------------------------------------------------------------------------------------
+
+// ========================================================================================================================
 // ASSESSMENT 6
 // Week 9 | Topic: (coming)
-// ============================================================
+// ========================================================================================================================
 
 void assessment6_d() { printf("Assessment 6 - D Grade coming soon\n"); }
 void assessment6_c() { printf("Assessment 6 - C Grade coming soon\n"); }
 void assessment6_b() { printf("Assessment 6 - B Grade coming soon\n"); }
 void assessment6_a() { printf("Assessment 6 - A Grade coming soon\n"); }
 
-// ============================================================
+// ------------------------------------------------------------------------------------------------------------------------
+// 📝 Personal note — Assessment 6 
+// ------------------------------------------------------------------------------------------------------------------------
+
+// ========================================================================================================================
 // ASSESSMENT 7
 // Week 11 | Topic: (coming)
-// ============================================================
+// ========================================================================================================================
 
 void assessment7_d() { printf("Assessment 7 - D Grade coming soon\n"); }
 void assessment7_c() { printf("Assessment 7 - C Grade coming soon\n"); }
 void assessment7_b() { printf("Assessment 7 - B Grade coming soon\n"); }
 void assessment7_a() { printf("Assessment 7 - A Grade coming soon\n"); }
 
-// ============================================================
+// ------------------------------------------------------------------------------------------------------------------------
+// 📝 Personal note — Assessment 7 
+// ------------------------------------------------------------------------------------------------------------------------
+
+// ========================================================================================================================
 // MAIN MENU
-// ============================================================
+// ========================================================================================================================
 int main() {
 
     int assessment, grade;
@@ -794,3 +808,6 @@ int main() {
 
     return 0;
 }
+//====================================================================================================================================================================================
+// The End :) 1923 C* — Thank you Mr. Dervishy — for your time, effort and teaching. Every concept in this file was learned in your class.
+//====================================================================================================================================================================================
