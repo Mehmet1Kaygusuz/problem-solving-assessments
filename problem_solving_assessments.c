@@ -645,7 +645,56 @@ float cups;
 // - Convert all inputs to ml, update running totals
 // - On exit, display total ml, total litres, entry count per type
 
-void assessment3_b() { printf("Assessment 3 - B Grade coming soon\n"); }
+void assessment3_b() { printf("Assessment 3 - B Grade completed on 22 March 2026 09:58\n"); 
+    int choice;
+    int quantity;
+    float totalMl = 0;
+    int bottleEntries = 0;
+    int cupEntries = 0;
+    int mlEntries = 0;
+    char anotherEntry = 'y';
+
+    while(anotherEntry == 'y' || anotherEntry == 'Y') {
+
+        printf("\nWhat would you like to add?\n");
+        printf("1: Millilitres\n");
+        printf("2: Bottles\n");
+        printf("3: Cups\n");
+        printf("Enter choice: "); scanf("%d", &choice);
+
+        if(choice == 1) {
+            printf("Enter millilitres: "); scanf("%d", &quantity);
+            totalMl += quantity;
+            mlEntries++;
+            printf("Added %d ml\n", quantity);
+        }
+
+        else if(choice == 2) {
+            printf("How many bottles? "); scanf("%d", &quantity);
+            int mlAdded = quantity * 500;
+            totalMl += mlAdded;
+            bottleEntries++;
+            printf("Added %d ml\n", mlAdded);
+        }
+
+        else if(choice == 3) {
+            printf("How many cups? "); scanf("%d", &quantity);
+            int mlAdded = quantity * 240;
+            totalMl += mlAdded;
+            cupEntries++;
+            printf("Added %d ml\n", mlAdded);
+        }
+
+        else {
+            printf("Invalid choice\n");
+        }
+        
+        printf("Add another entry? (y/n): "); scanf(" %c", &anotherEntry);
+    }
+    printf("\nSummary:\n");
+    printf("Total: %.0f ml (%.2f L)\n", totalMl, totalMl/1000);
+    printf("Entries — Bottles: %d, Cups: %d, Millilitres: %d\n", bottleEntries, cupEntries, mlEntries);
+}
 
 // 3-A Grade (70-100) — Daily Goal and Environment Factor
 // - User sets a daily hydration goal in litres
@@ -735,9 +784,6 @@ int main() {
     printf(" 1  - Assessment 1 (Week 3)  : Weekly Screen-Time Tracker\n");
     printf(" 2  - Assessment 2 (Week 4)  : City Aquarium Ticketing\n");
     printf(" 3  - Assessment 3 (Week 5)  : Hydration Tracker Loop Challenge\n");
-    
-    
-    
     printf(" 4  - Assessment 4 (Week 6)  : Coming soon\n");
     printf(" 5  - Assessment 5 (Week 8)  : Coming soon\n");
     printf(" 6  - Assessment 6 (Week 9)  : Coming soon\n");
