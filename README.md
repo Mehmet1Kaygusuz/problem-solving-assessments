@@ -37,7 +37,7 @@ problem-solving-assessments/
 |---|---|---|---|
 | Assessment 1 | Week 3 | Variables and Operators — Weekly Screen-Time Tracker | ✅ Completed |
 | Assessment 2 | Week 4 | Switch/Case — City Aquarium Ticketing | ✅ Completed |
-| Assessment 3 | Week 5 | Conversions and Loops — Hydration Tracker | 🔄 In progress (D, C, B ✅) |
+| Assessment 3 | Week 5 | Conversions and Loops — Hydration Tracker | ✅ Completed  |
 | Assessment 4 | Week 6 | Coming soon | ⏳ |
 | Assessment 5 | Week 8 | Coming soon | ⏳ |
 | Assessment 6 | Week 9 | Coming soon | ⏳ |
