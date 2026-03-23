@@ -703,13 +703,147 @@ void assessment3_b() { printf("Assessment 3 - B Grade completed on 22 March 2026
 // - On exit, per-day summary, overall totals, longest streak of meeting goal
 // - Robust input validation for all inputs
 
-void assessment3_a() { printf("Assessment 3 - A Grade coming soon\n"); }
+void assessment3_a() { printf("Assessment 3 - A Grade completed on 23 March 2026 11:46\n");
+    double goal;
+    double adjustedGoal;
+    int environment;
+
+    // Daily tracking arrays
+    double dailyMl[100];
+    double dailyLitres[100];
+    int dailyGoalMet[100];
+
+    // Totals
+    double totalMlAllDays = 0;
+    double totalLitresAllDays = 0;
+
+    // Streak tracking
+    int currentStreak = 0;
+    int longestStreak = 0;
+
+    int totalTrackedDays = 0;
+    char continueDay = 'y';
+
+    // -----------------------------
+    // INPUT: Daily goal
+    // -----------------------------
+    do {
+        printf("\nEnter your daily hydration goal (litres): ");
+        if (scanf("%lf", &goal) != 1 || goal <= 0) {
+            printf("Invalid input. Please enter a positive number.\n");
+            while(getchar() != '\n');
+            continue;
+        }
+        break;
+    } while(1);
+
+    // -----------------------------
+    // INPUT: Environment factor
+    // -----------------------------
+    do {
+        printf("\nSelect environment:\n");
+        printf("1 Cool / Indoor\n");
+        printf("2 Warm / Active\n");
+        printf("3 Hot / Very Active\n");
+        printf("Enter choice: ");
+
+        if (scanf("%d", &environment) != 1 || environment < 1 || environment > 3) {
+            printf("Invalid choice. Try again.\n");
+            while(getchar() != '\n');
+            continue;
+        }
+        break;
+    } while(1);
+
+    // Adjust goal
+    if(environment == 2)
+        adjustedGoal = goal * 1.10;
+    else if(environment == 3)
+        adjustedGoal = goal * 1.20;
+    else
+        adjustedGoal = goal;
+
+    printf("Adjusted goal: %.2f litres\n", adjustedGoal);
+
+    // -----------------------------
+    // DAILY LOOP
+    // -----------------------------
+    while(continueDay == 'y' || continueDay == 'Y') {
+
+        double todayMl = 0;
+
+        // Input validation for daily ml
+        do {
+            printf("\nEnter water intake today (ml): ");
+            if (scanf("%lf", &todayMl) != 1 || todayMl < 0) {
+                printf("Invalid input. Please enter a non-negative number.\n");
+                while(getchar() != '\n');
+                continue;
+            }
+            break;
+        } while(1);
+
+        double litresToday = todayMl / 1000.0;
+        double progress = (litresToday / adjustedGoal) * 100.0;
+
+        printf("Progress today: %.2f%%\n", progress);
+
+        // Goal check
+        int metGoal = (litresToday >= adjustedGoal);
+        if(metGoal) {
+            printf("Goal reached today!\n");
+            currentStreak++;
+            if(currentStreak > longestStreak)
+                longestStreak = currentStreak;
+        } else {
+            printf("Goal not reached.\n");
+            currentStreak = 0;
+        }
+
+        // Save daily data
+        dailyMl[totalTrackedDays] = todayMl;
+        dailyLitres[totalTrackedDays] = litresToday;
+        dailyGoalMet[totalTrackedDays] = metGoal;
+
+        // Update totals
+        totalMlAllDays += todayMl;
+        totalLitresAllDays += litresToday;
+
+        totalTrackedDays++;
+
+        printf("Track another day? (y/n): ");
+        scanf(" %c", &continueDay);
+    }
+    // -----------------------------
+    // FINAL SUMMARY
+    // -----------------------------
+    printf("\n----- FINAL SUMMARY -----\n");
+    printf("Total days tracked: %d\n", totalTrackedDays);
+
+    printf("\nPer-day summary:\n");
+    for(int i = 0; i < totalTrackedDays; i++) {
+        printf("Day %d: %.2f ml (%.2f litres) — %s\n",
+               i + 1,
+               dailyMl[i],
+               dailyLitres[i],
+               dailyGoalMet[i] ? "Goal met" : "Goal not met");
+    }
+
+    printf("\nOverall total ml: %.2f\n", totalMlAllDays);
+    printf("Overall total litres: %.2f\n", totalLitresAllDays);
+
+    printf("Longest streak of meeting goal: %d days\n", longestStreak);
+}
+
 
 // ------------------------------------------------------------------------------------------------------------------------
-// 📝 Personal note — Assessment 3 (D & C grade)
+// 📝 Personal note — Assessment 3
 // First time writing a conversion program with user input.
 // Simple but satisfying — ml to litres and cups in a few lines.
 // C grade added the loop — tracking multiple days felt natural after D.
+// B grade introduced a menu system for different input types — bottles, cups, ml.
+// A grade was the most complex — arrays for daily tracking, input validation,
+// streak calculation and environment factor all combined in one function.
 // ------------------------------------------------------------------------------------------------------------------------
 
 // ========================================================================================================================
