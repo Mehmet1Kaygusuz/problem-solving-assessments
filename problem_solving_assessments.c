@@ -1,7 +1,7 @@
 // Started this portfolio on 08 March 2026
 // Each assessment completed through personal study outside of class
 // All code written manually — no copy-paste, no AI generation
-// Total lines of code : 813
+// Total lines of code : 992
 // Total assessments   : 7
 // Completion date     : June 2026 (expected)
 
@@ -834,7 +834,6 @@ void assessment3_a() { printf("Assessment 3 - A Grade completed on 23 March 2026
 
     printf("Longest streak of meeting goal: %d days\n", longestStreak);
 }
-
 
 // ------------------------------------------------------------------------------------------------------------------------
 // 📝 Personal note — Assessment 3
