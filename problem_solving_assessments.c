@@ -1,7 +1,7 @@
 // Started this portfolio on 08 March 2026
 // Each assessment completed through personal study outside of class
 // All code written manually — no copy-paste, no AI generation
-// Total lines of code : 992
+// Total lines of code : 1057
 // Total assessments   : 7
 // Completion date     : June 2026 (expected)
 
