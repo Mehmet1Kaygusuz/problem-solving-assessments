@@ -14,7 +14,7 @@
 // Week 3  — Assessment 1 : Weekly Screen-Time Tracker
 // Week 4  — Assessment 2 : City Aquarium Ticketing
 // Week 5  — Assessment 3 : Hydration Tracker Loop Challenge
-// Week 6  — Assessment 4 : (coming)
+// Week 6  — Assessment 4 : Energy Usage Logger
 // Week 8  — Assessment 5 : (coming)
 // Week 9  — Assessment 6 : (coming)
 // Week 11 — Assessment 7 : (coming)
