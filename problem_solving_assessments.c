@@ -1,15 +1,15 @@
 // Started this portfolio on 08 March 2026
 // Each assessment completed through personal study outside of class
 // All code written manually — no copy-paste, no AI generation
-// Total lines of code : 1057
-// Total assessments   : 7
-// Completion date     : June 2026 (expected)
+// Total lines of code          : 1057
+// Total assessments            : 7
+// Submission due on or before  : 10th of June 2026 before 4pm
 
 // ========================================================================================================================
 // QH0305 — Problem Solving
 // Assessment Portfolio
 // Author : Mehmet Kaygusuz
-// Solent University — Computer Science Foundation 2025/26
+// Solent University — Computer Science Foundation 2025/2026
 // ========================================================================================================================
 // Week 3  — Assessment 1 : Weekly Screen-Time Tracker
 // Week 4  — Assessment 2 : City Aquarium Ticketing
