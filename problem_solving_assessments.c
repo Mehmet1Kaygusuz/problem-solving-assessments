@@ -845,14 +845,79 @@ void assessment3_a() { printf("Assessment 3 - A Grade completed on 23 March 2026
 // streak calculation and environment factor all combined in one function.
 // ------------------------------------------------------------------------------------------------------------------------
 
+
 // ========================================================================================================================
-// ASSESSMENT 4
-// Week 6 | Topic: (coming)
+// ASSESSMENT 4 — Energy Usage Logger
+// Week 6 | Topic: Loops, Conditional Logic and Arrays
 // ========================================================================================================================
 
-void assessment4_d() { printf("Assessment 4 - D Grade coming soon\n"); }
+// 4-D Grade (40-49) — Basic Input and Display
+// - Ask user how many days to record (up to 30)
+// - Create array and store each day's kWh reading
+// - Menu option 1: display all readings
+// - Menu option 2: calculate and display overall average
+void assessment4_d() { printf("Assessment 4 - D Grade completed on 25 March 2026 10:14\n"); 
+
+    int days;
+    printf("How many days of energy usage do you want to record (1-30)? ");
+    scanf("%d", &days);
+
+    if (days < 1 || days > 30) {
+        printf("Invalid number of days.\n");
+        return;
+    }
+
+    float readings[30];
+
+    // Input readings
+    for (int i = 0; i < days; i++) {
+        printf("Enter usage for day %d (kWh): ", i + 1);
+        scanf("%f", &readings[i]);
+    }
+
+    int choice;
+    printf("\nMenu:\n");
+    printf("1. Display all readings\n");
+    printf("2. Display average usage\n");
+    printf("Enter choice: ");
+    scanf("%d", &choice);
+
+    if (choice == 1) {
+        for (int i = 0; i < days; i++) {
+            printf("Day %d: %.2f kWh\n", i + 1, readings[i]);
+        }
+    }
+    else if (choice == 2) {
+        float sum = 0;
+        for (int i = 0; i < days; i++) sum += readings[i];
+        printf("Average usage: %.2f kWh\n", sum / days);
+    }
+    else {
+        printf("Invalid choice.\n");
+    }
+
+}
+
+// 4-C Grade (50-59) — Extended Menu with Loop
+// - Complete all previous steps
+// - Menu option 3: highest and lowest usage
+// - Menu option 7: exit
+// - Loop menu until user exits
+// - Handle invalid menu choices gracefully
 void assessment4_c() { printf("Assessment 4 - C Grade coming soon\n"); }
+
+// 4-B Grade (60-69) — Fixed Array and Threshold Analysis
+// - Complete all previous steps
+// - Refactor to fixed array size (50) with sentinel value
+// - Menu option 4: count days above/below user-defined threshold
+// - Menu option 5: weekly average (every 7 entries = 1 week)
 void assessment4_b() { printf("Assessment 4 - B Grade coming soon\n"); }
+
+// 4-A Grade (70-100) — Reverse Display and Pointers
+// - Complete all previous steps
+// - Menu option 6: reverse readings in relative-day format
+// - Use pointers to traverse, reverse, find highest/lowest
+// - Portfolio: explain how pointers work and why useful here
 void assessment4_a() { printf("Assessment 4 - A Grade coming soon\n"); }
 
 // ------------------------------------------------------------------------------------------------------------------------
@@ -917,7 +982,7 @@ int main() {
     printf(" 1  - Assessment 1 (Week 3)  : Weekly Screen-Time Tracker\n");
     printf(" 2  - Assessment 2 (Week 4)  : City Aquarium Ticketing\n");
     printf(" 3  - Assessment 3 (Week 5)  : Hydration Tracker Loop Challenge\n");
-    printf(" 4  - Assessment 4 (Week 6)  : Coming soon\n");
+    printf(" 4  - Assessment 4 (Week 6)  : Energy Usage Logger\n");
     printf(" 5  - Assessment 5 (Week 8)  : Coming soon\n");
     printf(" 6  - Assessment 6 (Week 9)  : Coming soon\n");
     printf(" 7  - Assessment 7 (Week 11) : Coming soon\n");
