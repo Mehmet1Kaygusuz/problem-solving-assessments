@@ -63,7 +63,7 @@ All assessments are contained in a single file, accessible via an interactive me
  1  - Assessment 1 (Week 3)  : Weekly Screen-Time Tracker
  2  - Assessment 2 (Week 4)  : City Aquarium Ticketing
  3  - Assessment 3 (Week 5)  : Hydration Tracker Loop Challenge
- 4  - Assessment 4 (Week 6)  : Coming soon
+ 4  - Assessment 4 (Week 6)  : Energy Usage Logger
  5  - Assessment 5 (Week 8)  : Coming soon
  6  - Assessment 6 (Week 9)  : Coming soon
  7  - Assessment 7 (Week 11) : Coming soon
