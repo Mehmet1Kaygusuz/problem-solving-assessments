@@ -904,8 +904,63 @@ void assessment4_d() { printf("Assessment 4 - D Grade completed on 25 March 2026
 // - Menu option 7: exit
 // - Loop menu until user exits
 // - Handle invalid menu choices gracefully
-void assessment4_c() { printf("Assessment 4 - C Grade coming soon\n"); }
+void assessment4_c() { printf("Assessment 4 - C Grade completed on 28 March 2026 21:15\n"); 
 
+int days;
+    printf("How many days of energy usage do you want to record (1-30)? ");
+    scanf("%d", &days);
+
+    if (days < 1 || days > 30) {
+        printf("Invalid number of days.\n");
+        return;
+    }
+
+    float readings[30];
+
+    for (int i = 0; i < days; i++) {
+        printf("Enter usage for day %d (kWh): ", i + 1);
+        scanf("%f", &readings[i]);
+    }
+
+    int running = 1;
+    while (running) {
+
+        int choice;
+        printf("\nMenu:\n");
+        printf("1. Display all readings\n");
+        printf("2. Display average usage\n");
+        printf("3. Highest & lowest usage\n");
+        printf("7. Exit\n");
+        printf("Enter choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 1) {
+            for (int i = 0; i < days; i++)
+                printf("Day %d: %.2f kWh\n", i + 1, readings[i]);
+        }
+        else if (choice == 2) {
+            float sum = 0;
+            for (int i = 0; i < days; i++) sum += readings[i];
+            printf("Average usage: %.2f kWh\n", sum / days);
+        }
+        else if (choice == 3) {
+            float min = readings[0], max = readings[0];
+            for (int i = 1; i < days; i++) {
+                if (readings[i] < min) min = readings[i];
+                if (readings[i] > max) max = readings[i];
+            }
+            printf("Lowest: %.2f kWh\n", min);
+            printf("Highest: %.2f kWh\n", max);
+        }
+        else if (choice == 7) {
+            running = 0;
+        }
+        else {
+            printf("Invalid choice. Try again.\n");
+        }
+
+}
+}
 // 4-B Grade (60-69) — Fixed Array and Threshold Analysis
 // - Complete all previous steps
 // - Refactor to fixed array size (50) with sentinel value
