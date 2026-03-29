@@ -961,12 +961,105 @@ int days;
 
 }
 }
+
 // 4-B Grade (60-69) — Fixed Array and Threshold Analysis
 // - Complete all previous steps
 // - Refactor to fixed array size (50) with sentinel value
 // - Menu option 4: count days above/below user-defined threshold
 // - Menu option 5: weekly average (every 7 entries = 1 week)
-void assessment4_b() { printf("Assessment 4 - B Grade coming soon\n"); }
+void assessment4_b() { printf("Assessment 4 - B Grade completed on 29 March 2026 15:51\n"); 
+
+    float readings[50];
+    int count = 0;
+    const float SENTINEL = -1.0f;
+
+    // Initialise array with sentinel
+    for (int i = 0; i < 50; i++) readings[i] = SENTINEL;
+
+    int days;
+    printf("How many days to record (1-30)? ");
+    scanf("%d", &days);
+
+    if (days < 1 || days > 30) {
+        printf("Invalid number.\n");
+        return;
+    }
+
+    for (int i = 0; i < days; i++) {
+        printf("Day %d usage (kWh): ", i + 1);
+        scanf("%f", &readings[i]);
+        count++;
+    }
+
+    int running = 1;
+    while (running) {
+
+        int choice;
+        printf("\nMenu:\n");
+        printf("1. Display all readings\n");
+        printf("2. Display average usage\n");
+        printf("3. Highest & lowest usage\n");
+        printf("4. Count above/below threshold\n");
+        printf("5. Weekly averages\n");
+        printf("7. Exit\n");
+        printf("Enter choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 1) {
+            for (int i = 0; i < count; i++)
+                printf("Day %d: %.2f kWh\n", i + 1, readings[i]);
+        }
+        else if (choice == 2) {
+            float sum = 0;
+            for (int i = 0; i < count; i++) sum += readings[i];
+            printf("Average: %.2f kWh\n", sum / count);
+        }
+        else if (choice == 3) {
+            float min = readings[0], max = readings[0];
+            for (int i = 1; i < count; i++) {
+                if (readings[i] < min) min = readings[i];
+                if (readings[i] > max) max = readings[i];
+            }
+            printf("Lowest: %.2f\nHighest: %.2f\n", min, max);
+        }
+        else if (choice == 4) {
+            float threshold;
+            printf("Enter threshold: ");
+            scanf("%f", &threshold);
+
+            int above = 0, below = 0;
+            for (int i = 0; i < count; i++) {
+                if (readings[i] > threshold) above++;
+                else below++;
+            }
+            printf("Above: %d days\nBelow/equal: %d days\n", above, below);
+        }
+        else if (choice == 5) {
+            int week = 1;
+            int i = 0;
+            while (i < count) {
+                float sum = 0;
+                int daysInWeek = 0;
+
+                for (int j = 0; j < 7 && i < count; j++, i++) {
+                    sum += readings[i];
+                    daysInWeek++;
+                }
+
+                printf("Week %d average: %.2f kWh\n", week, sum / daysInWeek);
+                week++;
+            }
+        }
+        else if (choice == 7) {
+            running = 0;
+        }
+        else {
+            printf("Invalid choice.\n");
+        }
+    }
+
+
+}
 
 // 4-A Grade (70-100) — Reverse Display and Pointers
 // - Complete all previous steps
