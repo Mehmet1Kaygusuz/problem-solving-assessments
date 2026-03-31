@@ -2,7 +2,7 @@
 // Each assessment completed through personal study outside of class
 // All code written manually — no copy-paste, no AI generation
 // Total lines of code          : 1057
-// Total assessments            : 7
+// Total assessments            : 9
 // Submission due on or before  : 10th of June 2026 before 4pm
 
 // ========================================================================================================================
@@ -15,10 +15,11 @@
 // Week 4  — Assessment 2 : City Aquarium Ticketing
 // Week 5  — Assessment 3 : Hydration Tracker Loop Challenge
 // Week 6  — Assessment 4 : Energy Usage Logger
-// Week 8  — Assessment 5 : (coming)
-// Week 9  — Assessment 6 : (coming)
-// Week 11 — Assessment 7 : (coming)
-// Reflective Statement   : Word document — 1000 words
+// Week 6  - Assessment 4-NEW : Calendar Printer (they've changed it on 31 March 2026)
+// Week 8  — Assessment 5 : Temperature Logger
+// Week 9  — Assessment 6 : Book Organizer
+// Week 11 — Assessment 7 : Media Lab Equipment Loan Manager
+// Week 12 - Assessment 8 : Word document — 1000 words
 // ========================================================================================================================
 
 #include <stdio.h>
@@ -1066,10 +1067,119 @@ void assessment4_b() { printf("Assessment 4 - B Grade completed on 29 March 2026
 // - Menu option 6: reverse readings in relative-day format
 // - Use pointers to traverse, reverse, find highest/lowest
 // - Portfolio: explain how pointers work and why useful here
-void assessment4_a() { printf("Assessment 4 - A Grade coming soon\n"); }
+void assessment4_a() { printf("Assessment 4 - A Grade completed on 30 March 2026 10:11\n"); 
+
+    float readings[50];
+    int count = 0;
+    const float SENTINEL = -1.0f;
+
+    for (int i = 0; i < 50; i++) readings[i] = SENTINEL;
+
+    int days;
+    printf("How many days to record (1-30)? ");
+    scanf("%d", &days);
+
+    for (int i = 0; i < days; i++) {
+        printf("Day %d usage: ", i + 1);
+        scanf("%f", &readings[i]);
+        count++;
+    }
+
+    int running = 1;
+    while (running) {
+
+        int choice;
+        printf("\nMenu:\n");
+        printf("1. Display all readings (pointer)\n");
+        printf("2. Average usage\n");
+        printf("3. Min/Max (pointer)\n");
+        printf("4. Threshold count\n");
+        printf("5. Weekly averages\n");
+        printf("6. Reverse display (pointer)\n");
+        printf("7. Exit\n");
+        printf("Enter choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 1) {
+            float *p = readings;
+            for (int i = 0; i < count; i++)
+                printf("Day %d: %.2f kWh\n", i + 1, *(p + i));
+        }
+        else if (choice == 2) {
+            float sum = 0;
+            for (int i = 0; i < count; i++) sum += readings[i];
+            printf("Average: %.2f\n", sum / count);
+        }
+        else if (choice == 3) {
+            float *p = readings;
+            float min = *p, max = *p;
+
+            for (int i = 1; i < count; i++) {
+                float v = *(p + i);
+                if (v < min) min = v;
+                if (v > max) max = v;
+            }
+
+            printf("Lowest: %.2f\nHighest: %.2f\n", min, max);
+        }
+        else if (choice == 4) {
+            float threshold;
+            printf("Threshold: ");
+            scanf("%f", &threshold);
+
+            int above = 0, below = 0;
+            for (int i = 0; i < count; i++) {
+                if (readings[i] > threshold) above++;
+                else below++;
+            }
+            printf("Above: %d\nBelow/equal: %d\n", above, below);
+        }
+        else if (choice == 5) {
+            int week = 1;
+            int i = 0;
+            while (i < count) {
+                float sum = 0;
+                int daysInWeek = 0;
+
+                for (int j = 0; j < 7 && i < count; j++, i++) {
+                    sum += readings[i];
+                    daysInWeek++;
+                }
+
+                printf("Week %d average: %.2f\n", week, sum / daysInWeek);
+                week++;
+            }
+        }
+        else if (choice == 6) {
+            float *p = readings + (count - 1);
+
+            for (int i = 0; i < count; i++) {
+                if (i == 0)
+                    printf("Today: %.2f kWh\n", *(p - i));
+                else if (i == 1)
+                    printf("Yesterday: %.2f kWh\n", *(p - i));
+                else
+                    printf("%d days ago: %.2f kWh\n", i, *(p - i));
+            }
+        }
+        else if (choice == 7) {
+            running = 0;
+        }
+        else {
+            printf("Invalid choice.\n");
+        }
+    }
+}
 
 // ------------------------------------------------------------------------------------------------------------------------
-// 📝 Personal note — Assessment 4 
+// 📝 Personal Note — Assessment 4
+// This assessment is working with arrays, menus, sentinel values,
+// weekly averages, and pointer-based traversal. Each grade added new logic:
+// D grade introduced arrays and averages,
+// C grade added looping menus and min/max,
+// B grade introduced sentinel values and weekly averages,
+// A grade required pointer logic and reverse-day formatting.
+// This was a challenging but rewarding progression.
 // ------------------------------------------------------------------------------------------------------------------------
 
 // ========================================================================================================================
