@@ -1,7 +1,7 @@
 // Started this portfolio on 08 March 2026
 // Each assessment completed through personal study outside of class
 // All code written manually — no copy-paste, no AI generation
-// Total lines of code          : 1057
+// Total lines of code          : 1446
 // Total assessments            : 9
 // Submission due on or before  : 10th of June 2026 before 4pm
 
@@ -11,15 +11,15 @@
 // Author : Mehmet Kaygusuz
 // Solent University — Computer Science Foundation 2025/2026
 // ========================================================================================================================
-// Week 3  — Assessment 1 : Weekly Screen-Time Tracker
-// Week 4  — Assessment 2 : City Aquarium Ticketing
-// Week 5  — Assessment 3 : Hydration Tracker Loop Challenge
-// Week 6  — Assessment 4 : Energy Usage Logger
-// Week 6  - Assessment 4-NEW : Calendar Printer (they've changed it on 31 March 2026)
-// Week 8  — Assessment 5 : Temperature Logger
-// Week 9  — Assessment 6 : Book Organizer
-// Week 11 — Assessment 7 : Media Lab Equipment Loan Manager
-// Week 12 - Assessment 8 : Word document — 1000 words
+// Week 3  — Assessment 1     : Weekly Screen-Time Tracker
+// Week 4  — Assessment 2     : City Aquarium Ticketing
+// Week 5  — Assessment 3     : Hydration Tracker Loop Challenge
+// Week 6  — Assessment 4     : Energy Usage Logger
+// Week 6  - Assessment 4 NEW : Calendar Printer (It's been updated it on 31 March 2026)
+// Week 8  — Assessment 5     : Temperature Logger
+// Week 9  — Assessment 6     : Book Organizer
+// Week 11 — Assessment 7     : Media Lab Equipment Loan Manager
+// Week 12 - Assessment 8     : Word document — 1000 words
 // ========================================================================================================================
 
 #include <stdio.h>
