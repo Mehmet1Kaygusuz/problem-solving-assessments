@@ -1183,41 +1183,166 @@ void assessment4_a() { printf("Assessment 4 - A Grade completed on 30 March 2026
 // ------------------------------------------------------------------------------------------------------------------------
 
 // ========================================================================================================================
-// ASSESSMENT 5
-// Week 8 | Topic: (coming)
+// ASSESSMENT 4-NEW — Calendar Printer
+// Week 6 | Topic: Loops, Conditional Logic and Calendar Formatting
+// (Brief updated on 31 March 2026 — replaces original Assessment 4)
 // ========================================================================================================================
 
+// 4N-D Grade (40-49) — Basic Calendar Grid
+// - Prompt user for month number (1-12) and starting weekday (1=Mon, 7=Sun)
+// - Use a fixed number of days (e.g. 30) — layout only, not real month lengths
+// - Print calendar grid with Mon-Sun headers and day numbers beneath
+// - Show neat alignment for weeks
+void assessment4n_d() { printf("Assessment 4-NEW - D Grade coming soon\n"); }
+
+// 4N-C Grade (50-59) — Correct Month Length and Validation
+// - Complete all previous steps
+// - Determine correct number of days for selected month in 2025
+// - Print calendar using correct month length
+// - Count and display number of Saturdays and Sundays
+// - Add basic input validation for month and weekday values
+void assessment4n_c() { printf("Assessment 4-NEW - C Grade coming soon\n"); }
+
+// 4N-B Grade (60-69) — Start Date Calculation
+// - Complete all previous steps
+// - Stop asking user for starting weekday — calculate it automatically for 2025
+// - Compute weekday for 1st of selected month using modular arithmetic
+//   (accumulate days from 1 Jan 2025 which is a Wednesday, then take modulo 7)
+// - Display derived weekday and render calendar accordingly
+// - Portfolio: include detailed explanation of calculation approach
+void assessment4n_b() { printf("Assessment 4-NEW - B Grade coming soon\n"); }
+
+// 4N-A Grade (70-100) — Calendar Navigation
+// - Complete all previous steps
+// - Prompt user to enter a specific date and highlight it in the calendar
+// - Provide navigation: after printing chosen month, offer previous/next month of 2025
+// - Keep automatic first-day calculation for navigated months
+// - Robust input validation for all user inputs
+// - Portfolio: detailed explanation of logic and problems encountered
+void assessment4n_a() { printf("Assessment 4-NEW - A Grade coming soon\n"); }
+
+// ------------------------------------------------------------------------------------------------------------------------
+// 📝 Personal note — Assessment 4-NEW
+// ------------------------------------------------------------------------------------------------------------------------
+
+// ========================================================================================================================
+// ASSESSMENT 5 — Temperature Logger
+// Week 8 | Topic: Arrays, Loops, Pointers
+// ========================================================================================================================
+
+// 5-D Grade (40-49) — Basic Array and Average
+// - Ask user how many days to record temperature readings
+// - Store readings in array of appropriate size
+// - Menu option 1: display all temperature readings
+// - Menu option 2: calculate and display average temperature
 void assessment5_d() { printf("Assessment 5 - D Grade coming soon\n"); }
+
+// 5-C Grade (50-59) — Extended Menu with Loop
+// - Complete all previous steps
+// - Menu option 3: highest and lowest temperature
+// - Menu option 7: exit
+// - Run menu in a loop until user exits
+// - Handle invalid menu choices gracefully
 void assessment5_c() { printf("Assessment 5 - C Grade coming soon\n"); }
+
+// 5-B Grade (60-69) — Fixed Array and Threshold Analysis
+// - Complete all previous steps
+// - Refactor to fixed array size (50) with sentinel value (-1)
+// - Menu option 4: count days above/below user-defined threshold
+// - Menu option 5: calculate weekly average temperature (every 7 entries = 1 week)
+// - Explain program logic via in-code comments or portfolio
 void assessment5_b() { printf("Assessment 5 - B Grade coming soon\n"); }
+
+// 5-A Grade (70-100) — Reverse Display and Pointers
+// - Complete all previous steps
+// - Menu option 6: reverse temperature readings — format: Today, Yesterday, 2 days ago...
+// - Research and explain how pointers work and why useful here
+// - Rewrite part of program using pointers instead of array indexing:
+//   traverse the array, reverse the array, find highest/lowest temperature
 void assessment5_a() { printf("Assessment 5 - A Grade coming soon\n"); }
 
 // ------------------------------------------------------------------------------------------------------------------------
-// 📝 Personal note — Assessment 5 
+// 📝 Personal note — Assessment 5
 // ------------------------------------------------------------------------------------------------------------------------
 
 // ========================================================================================================================
-// ASSESSMENT 6
-// Week 9 | Topic: (coming)
+// ASSESSMENT 6 — Book Organizer
+// Week 9 | Topic: Sorting Algorithms and String Handling
 // ========================================================================================================================
 
+// 6-D Grade (40-49) — Basic Display Loop
+// - Create string array with 8 book titles in mixed alphabetical order
+// - Use a loop to print on each iteration:
+//   Current Title: "<title>"
+//   First Title:   "<title_at_index_0>"
+// - No sorting or manipulation required
 void assessment6_d() { printf("Assessment 6 - D Grade coming soon\n"); }
+
+// 6-C Grade (50-59) — Single Pass to Front
+// - Complete all previous steps
+// - Modify loop to perform single pass putting earliest title at index 0
+//   (case-insensitive alphabetical comparison)
+// - Compare each title with index 0 — if earlier alphabetically, swap
+// - Print playlist before and after the loop
 void assessment6_c() { printf("Assessment 6 - C Grade coming soon\n"); }
+
+// 6-B Grade (60-69) — Full Alphabetical Sort
+// - Complete all previous steps
+// - Implement nested loop to sort entire list alphabetically
+//   (swap strings with first unsorted element on each pass)
+// - Print playlist before and after sorting
+// - Portfolio: explain how the sorting works
 void assessment6_b() { printf("Assessment 6 - B Grade coming soon\n"); }
+
+// 6-A Grade (70-100) — Delete and Alternative Sort
+// - Complete all previous steps
+// - Allow user to enter a book title to delete from the list
+//   (if found: remove and shift remaining titles; if not found: display message)
+// - Implement a different sorting algorithm (e.g. Bubble Sort)
+// - Compare old algorithm with new one in terms of logic and performance
+// - Portfolio: thorough explanation required for highest grade
 void assessment6_a() { printf("Assessment 6 - A Grade coming soon\n"); }
 
 // ------------------------------------------------------------------------------------------------------------------------
-// 📝 Personal note — Assessment 6 
+// 📝 Personal note — Assessment 6
 // ------------------------------------------------------------------------------------------------------------------------
 
 // ========================================================================================================================
-// ASSESSMENT 7
-// Week 11 | Topic: (coming)
+// ASSESSMENT 7 — Media Lab Equipment Loan Manager
+// Week 11 | Topic: Functions and File Handling
 // ========================================================================================================================
 
+// 7-D Grade (40-49) — Basic Struct and File I/O
+// - Define struct Item with: id (int), assetTag (string), status (char A=Available/L=Loaned)
+// - Create data file (loans.txt) if it does not exist
+// - addItem()     → get id, assetTag, status from user and append to file
+// - displayItems() → read all records from file and print in tidy format
+// - Demonstrate adding 3+ items and displaying the list
 void assessment7_d() { printf("Assessment 7 - D Grade coming soon\n"); }
+
+// 7-C Grade (50-59) — Parameters and Search
+// - Refactor: addItem(int id, char assetTag[], char status[]) with parameters
+// - Keep displayItems() with no parameters
+// - Add searchItemById(int id) — read file and display matching record or not found message
+// - Duplicate-ID check: addItem() refuses to add if id already exists
 void assessment7_c() { printf("Assessment 7 - C Grade coming soon\n"); }
+
+// 7-B Grade (60-69) — Return Values and Update
+// - Refactor functions to use return values:
+//   int addItem(...)          → return 1 if added, 0 if duplicate
+//   int searchItemById(int id) → return record index if found, -1 otherwise
+// - Implement int updateItem(int id, const char newAssetTag[], const char newStatus[])
+//   read all records into memory, apply update, rewrite file
+//   return 1 if successful, 0 if not found
 void assessment7_b() { printf("Assessment 7 - B Grade coming soon\n"); }
+
+// 7-A Grade (70-100) — Delete and File Persistence
+// - Implement int deleteItem(int id)
+//   load all records, remove target, overwrite file — return 1 if deleted, 0 if not found
+// - On program start: load data from file into in-memory array
+// - Menu: add / view / search / update / delete / save / exit
+// - On save or exit: write current in-memory data to file
+// - Portfolio: note explaining local vs global scope in implementation
 void assessment7_a() { printf("Assessment 7 - A Grade coming soon\n"); }
 
 // ------------------------------------------------------------------------------------------------------------------------
@@ -1231,21 +1356,22 @@ int main() {
 
     int assessment, grade;
 
-    printf("\n========================================\n");
+    printf("\n==================================================================\n");
     printf("  QH0305 — PROBLEM SOLVING\n");
     printf("  Assessment Portfolio\n");
     printf("  Mehmet Kaygusuz\n");
-    printf("========================================\n");
+    printf("==================================================================\n");
     printf("\n--- SELECT ASSESSMENT ---\n");
-    printf(" 1  - Assessment 1 (Week 3)  : Weekly Screen-Time Tracker\n");
-    printf(" 2  - Assessment 2 (Week 4)  : City Aquarium Ticketing\n");
-    printf(" 3  - Assessment 3 (Week 5)  : Hydration Tracker Loop Challenge\n");
-    printf(" 4  - Assessment 4 (Week 6)  : Energy Usage Logger\n");
-    printf(" 5  - Assessment 5 (Week 8)  : Coming soon\n");
-    printf(" 6  - Assessment 6 (Week 9)  : Coming soon\n");
-    printf(" 7  - Assessment 7 (Week 11) : Coming soon\n");
+    printf(" 1  - Assessment 1 (Week 3)     : Weekly Screen-Time Tracker\n");
+    printf(" 2  - Assessment 2 (Week 4)     : City Aquarium Ticketing\n");
+    printf(" 3  - Assessment 3 (Week 5)     : Hydration Tracker Loop Challenge\n");
+    printf(" 4  - Assessment 4 (Week 6)     : Energy Usage Logger\n");
+    printf(" 8  - Assessment 4 (Week 6) NEW : Calendar Printer\n");
+    printf(" 5  - Assessment 5 (Week 8)     : Temperature Logger\n");
+    printf(" 6  - Assessment 6 (Week 9)     : Book Organizer\n");
+    printf(" 7  - Assessment 7 (Week 11)    : Media Lab Equipment Loan Manager\n");
     printf("\n 0  - Exit\n");
-    printf("========================================\n");
+    printf("==================================================================\n");
     printf("Your choice: ");
     scanf("%d", &assessment);
 
@@ -1254,7 +1380,7 @@ int main() {
         return 0;
     }
 
-    if (assessment < 1 || assessment > 7) {
+    if (assessment < 1 || assessment > 8) {
         printf("Invalid choice\n");
         return 0;
     }
@@ -1290,6 +1416,11 @@ int main() {
     else if (assessment == 4 && grade == 2) assessment4_c();
     else if (assessment == 4 && grade == 3) assessment4_b();
     else if (assessment == 4 && grade == 4) assessment4_a();
+
+    else if (assessment == 8 && grade == 1) assessment4n_d();
+    else if (assessment == 8 && grade == 2) assessment4n_c();
+    else if (assessment == 8 && grade == 3) assessment4n_b();
+    else if (assessment == 8 && grade == 4) assessment4n_a();
 
     else if (assessment == 5 && grade == 1) assessment5_d();
     else if (assessment == 5 && grade == 2) assessment5_c();
