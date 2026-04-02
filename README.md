@@ -39,10 +39,11 @@ problem-solving-assessments/
 | Assessment 2 | Week 4 | Switch/Case — City Aquarium Ticketing | ✅ Completed |
 | Assessment 3 | Week 5 | Conversions and Loops — Hydration Tracker | ✅ Completed  |
 | Assessment 4 | Week 6 | Loops and Arrays — Energy Usage Logger | ✅ Completed  |
-| Assessment 5 | Week 8 | Coming soon | ⏳ |
-| Assessment 6 | Week 9 | Coming soon | ⏳ |
-| Assessment 7 | Week 11 | Coming soon | ⏳ |
-| Reflective Statement | End of unit | 1000 words | ⏳ |
+| Assessment 4-NEW | Week 6 | Loops and Calendar Formatting — Calendar Printer (updated brief 31 March 2026) | ⏳ |
+| Assessment 5 | Week 8 | Arrays and Pointers — Temperature Logger | ⏳ |
+| Assessment 6 | Week 9 | Sorting Algorithms and Strings — Book Organizer | ⏳ |
+| Assessment 7 | Week 11 | Functions and File Handling — Media Lab Equipment Loan Manager | ⏳ |
+| Reflective Statement | Week 12 | End of unit - 1000 words | ⏳ |
 
 ---
 
@@ -64,9 +65,10 @@ All assessments are contained in a single file, accessible via an interactive me
  2  - Assessment 2 (Week 4)  : City Aquarium Ticketing
  3  - Assessment 3 (Week 5)  : Hydration Tracker Loop Challenge
  4  - Assessment 4 (Week 6)  : Energy Usage Logger
- 5  - Assessment 5 (Week 8)  : Coming soon
- 6  - Assessment 6 (Week 9)  : Coming soon
- 7  - Assessment 7 (Week 11) : Coming soon
+ 8  - Assessment 4 ( NEW )   : Calendar Printer (It's been updated by on 30 March 2026)
+ 5  - Assessment 5 (Week 8)  : Temperature Logger
+ 6  - Assessment 6 (Week 9)  : Book Organizer
+ 7  - Assessment 7 (Week 11) : Media Lab Equipment Loan Manager
 
  0  - Exit
 
@@ -145,7 +147,7 @@ This project is part of academic coursework and is available for educational ref
 
 ```
 MIT License
-Copyright (c) 2026 Mehmet Kaygusuz
+Copyright (c) 2026 Mehmet Kaygusuz | 1923 C* |
 ```
 
 ---
