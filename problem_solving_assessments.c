@@ -1,7 +1,7 @@
 // Started this portfolio on 08 March 2026
 // Each assessment completed through personal study outside of class
 // All code written manually — no copy-paste, no AI generation
-// Total lines of code          : 1446
+// Total lines of code          : 1482
 // Total assessments            : 9
 // Submission due on or before  : 10th of June 2026 before 4pm
 
