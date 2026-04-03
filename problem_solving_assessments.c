@@ -1193,7 +1193,43 @@ void assessment4_a() { printf("Assessment 4 - A Grade completed on 30 March 2026
 // - Use a fixed number of days (e.g. 30) — layout only, not real month lengths
 // - Print calendar grid with Mon-Sun headers and day numbers beneath
 // - Show neat alignment for weeks
-void assessment4n_d() { printf("Assessment 4-NEW - D Grade coming soon\n"); }
+void assessment4n_d() { printf("Assessment 4-NEW - D Grade completed on 02 April 2026 15:43\n"); 
+
+    int month;
+    int startWeekday;
+    int fixedDays = 30; // fixed length for layout
+
+    printf("Enter month number (1-12): ");
+    scanf("%d", &month);
+
+    printf("Enter starting weekday (1=Mon, 7=Sun): ");
+    scanf("%d", &startWeekday);
+
+    printf("\nCalendar for month %d (fixed %d days)\n", month, fixedDays);
+    printf("Mon Tue Wed Thu Fri Sat Sun\n");
+
+    int day;
+    int weekdayCounter = 1;
+
+    // print initial spaces
+    for(int i = 1; i < startWeekday; i++) {
+        printf("    ");
+        weekdayCounter++;
+    }
+
+    // print days
+    for(day = 1; day <= fixedDays; day++) {
+        printf("%3d ", day);
+
+        if(weekdayCounter == 7) {
+            printf("\n");
+            weekdayCounter = 1;
+        } else {
+            weekdayCounter++;
+        }
+    }
+    printf("\n");
+}
 
 // 4N-C Grade (50-59) — Correct Month Length and Validation
 // - Complete all previous steps
