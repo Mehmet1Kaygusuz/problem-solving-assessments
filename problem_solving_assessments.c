@@ -1350,6 +1350,42 @@ void assessment4n_c() { printf("Assessment 4-NEW - C Grade completed on 04 April
     printf("Total Sundays: %d\n", sundays);
 }
 
+// Helper: compute weekday for 1st of given month in 2025
+// 1 = Monday, ..., 7 = Sunday
+// 1 Jan 2025 is Wednesday => weekday = 3
+int getFirstWeekday2025(int month) {
+    int baseWeekday = 3; // 1 Jan 2025 = Wednesday
+    int totalDays = 0;
+
+    for(int m = 1; m < month; m++) {
+        totalDays += getDaysInMonth2025(m);
+    }
+
+    int weekday = ((baseWeekday - 1) + (totalDays % 7)) % 7 + 1;
+    return weekday;
+}
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 4N-B Grade (60-69) — Start Date Calculation
 // - Complete all previous steps
@@ -1358,7 +1394,65 @@ void assessment4n_c() { printf("Assessment 4-NEW - C Grade completed on 04 April
 //   (accumulate days from 1 Jan 2025 which is a Wednesday, then take modulo 7)
 // - Display derived weekday and render calendar accordingly
 // - Portfolio: include detailed explanation of calculation approach
-void assessment4n_b() { printf("Assessment 4-NEW - B Grade coming soon\n"); }
+void assessment4n_b() { printf("Assessment 4-NEW - B Grade complete on 05 April 2026 17:36\n"); 
+
+    int month;
+    int daysInMonth;
+    int startWeekday;
+    int saturdays = 0;
+    int sundays = 0;
+
+    // month input validation
+    do {
+        printf("Enter month number (1-12): ");
+        if (scanf("%d", &month) != 1) {
+            printf("Invalid input. Please enter a number.\n");
+            while(getchar() != '\n');
+            continue;
+        }
+        if (month < 1 || month > 12) {
+            printf("Month must be between 1 and 12.\n");
+            continue;
+        }
+        break;
+    } while(1);
+
+    daysInMonth = getDaysInMonth2025(month);
+    startWeekday = getFirstWeekday2025(month);
+
+    printf("\n");
+    printMonthName(month);
+    printf("1st day weekday (1=Mon, 7=Sun): %d\n\n", startWeekday);
+    printf("Mon Tue Wed Thu Fri Sat Sun\n");
+
+    int weekdayCounter = 1;
+
+    // initial spaces
+    for(int i = 1; i < startWeekday; i++) {
+        printf("    ");
+        weekdayCounter++;
+    }
+
+    // print days and count weekends
+    for(int day = 1; day <= daysInMonth; day++) {
+        printf("%3d ", day);
+
+        if(weekdayCounter == 6) {
+            saturdays++;
+        } else if(weekdayCounter == 7) {
+            sundays++;
+        }
+
+        if(weekdayCounter == 7) {
+            printf("\n");
+            weekdayCounter = 1;
+        } else {
+            weekdayCounter++;
+        }
+    }
+    printf("\n\nTotal Saturdays: %d\n", saturdays);
+    printf("Total Sundays: %d\n", sundays);
+}
 
 // 4N-A Grade (70-100) — Calendar Navigation
 // - Complete all previous steps
