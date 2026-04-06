@@ -37,8 +37,8 @@ problem-solving-assessments/
 |---|---|---|---|
 | Assessment 1 | Week 3 | Variables and Operators — Weekly Screen-Time Tracker | ✅ Completed |
 | Assessment 2 | Week 4 | Switch/Case — City Aquarium Ticketing | ✅ Completed |
-| Assessment 3 | Week 5 | Conversions and Loops — Hydration Tracker | ✅ Completed  |
-| Assessment 4 | Week 6 | Loops and Arrays — Energy Usage Logger | ✅ Completed  |
+| Assessment 3 | Week 5 | Conversions and Loops — Hydration Tracker | ✅ Completed |
+| Assessment 4 | Week 6 | Loops and Arrays — Energy Usage Logger | ✅ Completed |
 | Assessment 4-NEW | Week 6 | Loops and Calendar Formatting — Calendar Printer (updated brief 31 March 2026) | ✅ Completed |
 | Assessment 5 | Week 8 | Arrays and Pointers — Temperature Logger | ⏳ |
 | Assessment 6 | Week 9 | Sorting Algorithms and Strings — Book Organizer | ⏳ |
