@@ -43,7 +43,7 @@ problem-solving-assessments/
 | Assessment 5 | Week 8 | Arrays and Pointers — Temperature Logger | ⏳ |
 | Assessment 6 | Week 9 | Sorting Algorithms and Strings — Book Organizer | ⏳ |
 | Assessment 7 | Week 11 | Functions and File Handling — Media Lab Equipment Loan Manager | ⏳ |
-| Reflective Statement | Week 12 | End of unit - 1000 words | ⏳ |
+| Assessment 8 | Week 12 | End of unit - Reflective Statement - 1000 words | (✅ 1, 2, 3, 4, 4 NEW) ⏳ |
 
 ---
 
@@ -61,14 +61,14 @@ All assessments are contained in a single file, accessible via an interactive me
 ========================================
 
 --- SELECT ASSESSMENT ---
- 1  - Assessment 1 (Week 3)  : Weekly Screen-Time Tracker
- 2  - Assessment 2 (Week 4)  : City Aquarium Ticketing
- 3  - Assessment 3 (Week 5)  : Hydration Tracker Loop Challenge
- 4  - Assessment 4 (Week 6)  : Energy Usage Logger
- 8  - Assessment 4 ( NEW )   : Calendar Printer (It's been updated by on 30 March 2026)
- 5  - Assessment 5 (Week 8)  : Temperature Logger
- 6  - Assessment 6 (Week 9)  : Book Organizer
- 7  - Assessment 7 (Week 11) : Media Lab Equipment Loan Manager
+ 1  - Assessment 1 (Week 3)     : Weekly Screen-Time Tracker
+ 2  - Assessment 2 (Week 4)     : City Aquarium Ticketing
+ 3  - Assessment 3 (Week 5)     : Hydration Tracker Loop Challenge
+ 4  - Assessment 4 (Week 6)     : Energy Usage Logger
+ 8  - Assessment 4 (Week 6) NEW : Calendar Printer (It's been updated by on 30 March 2026)
+ 5  - Assessment 5 (Week 8)     : Temperature Logger
+ 6  - Assessment 6 (Week 9)     : Book Organizer
+ 7  - Assessment 7 (Week 11)    : Media Lab Equipment Loan Manager
 
  0  - Exit
 
