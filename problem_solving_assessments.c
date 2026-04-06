@@ -1,7 +1,7 @@
 // Started this portfolio on 08 March 2026
 // Each assessment completed through personal study outside of class
 // All code written manually — no copy-paste, no AI generation
-// Total lines of code          : 1666
+// Total lines of code          : 1814
 // Total assessments            : 9
 // Submission due on or before  : 10th of June 2026 before 4pm
 
@@ -1439,11 +1439,160 @@ void assessment4n_b() { printf("Assessment 4-NEW - B Grade complete on 05 April 
 // - Keep automatic first-day calculation for navigated months
 // - Robust input validation for all user inputs
 // - Portfolio: detailed explanation of logic and problems encountered
-void assessment4n_a() { printf("Assessment 4-NEW - A Grade coming soon\n"); }
+
+void printCalendarWithHighlight(int month, int highlightDay) {
+    int daysInMonth = getDaysInMonth2025(month);
+    int startWeekday = getFirstWeekday2025(month);
+
+    printMonthName(month);
+    printf("Mon Tue Wed Thu Fri Sat Sun\n");
+
+    int weekdayCounter = 1;
+
+    // initial spaces
+    for(int i = 1; i < startWeekday; i++) {
+        printf("    ");
+        weekdayCounter++;
+    }
+
+    for(int day = 1; day <= daysInMonth; day++) {
+        if(day == highlightDay) {
+            // highlight with brackets
+            printf("[%2d]", day);
+        } else {
+            printf("%3d ", day);
+        }
+
+        if(weekdayCounter == 7) {
+            printf("\n");
+            weekdayCounter = 1;
+        } else {
+            weekdayCounter++;
+        }
+    }
+    printf("\n");
+}
+
+void assessment4n_a() { printf("Assessment 4 - A Grade completed on 06 April 2026 15:02\n");
+
+    int month;
+    int highlightDay;
+    int menuChoice;
+
+    // initial month input
+    do {
+        printf("Enter month number (1-12): ");
+        if (scanf("%d", &month) != 1) {
+            printf("Invalid input. Please enter a number.\n");
+            while(getchar() != '\n');
+            continue;
+        }
+        if (month < 1 || month > 12) {
+            printf("Month must be between 1 and 12.\n");
+            continue;
+        }
+        break;
+    } while(1);
+
+    // date input with validation
+    int daysInMonth = getDaysInMonth2025(month);
+    do {
+        printf("Enter a date to highlight (1-%d): ", daysInMonth);
+        if (scanf("%d", &highlightDay) != 1) {
+            printf("Invalid input. Please enter a number.\n");
+            while(getchar() != '\n');
+            continue;
+        }
+        if (highlightDay < 1 || highlightDay > daysInMonth) {
+            printf("Day must be between 1 and %d.\n", daysInMonth);
+            continue;
+        }
+        break;
+    } while(1);
+
+    // main navigation loop
+    do {
+        printf("\n---------------------------------\n");
+        printCalendarWithHighlight(month, highlightDay);
+        printf("---------------------------------\n");
+
+        printf("Navigation menu:\n");
+        printf("1 - Previous month\n");
+        printf("2 - Next month\n");
+        printf("3 - Exit\n");
+        printf("Enter choice: ");
+
+        if (scanf("%d", &menuChoice) != 1) {
+            printf("Invalid input. Please enter a number.\n");
+            while(getchar() != '\n');
+            continue;
+        }
+
+        if (menuChoice == 1) {
+            if (month == 1) {
+                printf("Already at January 2025. Cannot go to previous year.\n");
+            } else {
+                month--;
+                daysInMonth = getDaysInMonth2025(month);
+
+                // ask new highlight day for new month
+                do {
+                    printf("Enter a date to highlight for this month (1-%d): ", daysInMonth);
+                    if (scanf("%d", &highlightDay) != 1) {
+                        printf("Invalid input. Please enter a number.\n");
+                        while(getchar() != '\n');
+                        continue;
+                    }
+                    if (highlightDay < 1 || highlightDay > daysInMonth) {
+                        printf("Day must be between 1 and %d.\n", daysInMonth);
+                        continue;
+                    }
+                    break;
+                } while(1);
+            }
+        } else if (menuChoice == 2) {
+            if (month == 12) {
+                printf("Already at December 2025. Cannot go to next year.\n");
+            } else {
+                month++;
+                daysInMonth = getDaysInMonth2025(month);
+
+                do {
+                    printf("Enter a date to highlight for this month (1-%d): ", daysInMonth);
+                    if (scanf("%d", &highlightDay) != 1) {
+                        printf("Invalid input. Please enter a number.\n");
+                        while(getchar() != '\n');
+                        continue;
+                    }
+                    if (highlightDay < 1 || highlightDay > daysInMonth) {
+                        printf("Day must be between 1 and %d.\n", daysInMonth);
+                        continue;
+                    }
+                    break;
+                } while(1);
+            }
+        } else if (menuChoice == 3) {
+            printf("Exiting calendar navigation.\n");
+            break;
+        } else {
+            printf("Invalid menu choice. Please select 1, 2 or 3.\n");
+        }
+
+    } while(1);
+}
+
 
 // ------------------------------------------------------------------------------------------------------------------------
 // 📝 Personal note — Assessment 4-NEW
+// First time printing a structured calendar layout using loops and modular arithmetic.
+// D grade focused on a simple grid with a fixed number of days and a user-chosen start weekday.
+// C grade added real month lengths for 2025, input validation, and Saturday/Sunday counting.
+// B grade removed the manual weekday input — modular arithmetic from 1 Jan 2025 (Wednesday)
+// was used to calculate the first weekday of any month automatically.
+// A grade introduced month navigation and date highlighting, with helper functions to keep
+// the code readable and well-structured at foundation level.
 // ------------------------------------------------------------------------------------------------------------------------
+
 
 // ========================================================================================================================
 // ASSESSMENT 5 — Temperature Logger

@@ -2,7 +2,7 @@
 # Problem Solving — Assessment Portfolio
 ### Mehmet Kaygusuz
 
-QH0305 Problem Solving — Assessment Portfolio | Solent University 2025/26
+QH0305 Problem Solving — Assessment Portfolio | Solent University 2025/2026
 
 ---
 
@@ -39,7 +39,7 @@ problem-solving-assessments/
 | Assessment 2 | Week 4 | Switch/Case — City Aquarium Ticketing | ✅ Completed |
 | Assessment 3 | Week 5 | Conversions and Loops — Hydration Tracker | ✅ Completed  |
 | Assessment 4 | Week 6 | Loops and Arrays — Energy Usage Logger | ✅ Completed  |
-| Assessment 4-NEW | Week 6 | Loops and Calendar Formatting — Calendar Printer (updated brief 31 March 2026) | ✅  (Grade D, C & B) ⏳ |
+| Assessment 4-NEW | Week 6 | Loops and Calendar Formatting — Calendar Printer (updated brief 31 March 2026) | ✅ Completed |
 | Assessment 5 | Week 8 | Arrays and Pointers — Temperature Logger | ⏳ |
 | Assessment 6 | Week 9 | Sorting Algorithms and Strings — Book Organizer | ⏳ |
 | Assessment 7 | Week 11 | Functions and File Handling — Media Lab Equipment Loan Manager | ⏳ |
