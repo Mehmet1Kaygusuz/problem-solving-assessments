@@ -40,10 +40,10 @@ problem-solving-assessments/
 | Assessment 3 | Week 5 | Conversions and Loops — Hydration Tracker | ✅ Completed |
 | Assessment 4 | Week 6 | Loops and Arrays — Energy Usage Logger | ✅ Completed |
 | Assessment 4-NEW | Week 6 | Loops and Calendar Formatting — Calendar Printer (updated brief 31 March 2026) | ✅ Completed |
-| Assessment 5 | Week 8 | Arrays and Pointers — Temperature Logger | ⏳ |
-| Assessment 6 | Week 9 | Sorting Algorithms and Strings — Book Organizer | ⏳ |
-| Assessment 7 | Week 11 | Functions and File Handling — Media Lab Equipment Loan Manager | ⏳ |
-| Assessment 8 | Week 12 | End of unit - Reflective Statement - 1000 words | (✅ 1, 2, 3, 4, 4 NEW) ⏳ |
+| Assessment 5 | Week 8 | Arrays and Pointers — Temperature Logger | ✅ Completed |
+| Assessment 6 | Week 9 | Sorting Algorithms and Strings — Book Organizer | ✅ Completed |
+| Assessment 7 | Week 11 | Functions and File Handling — Media Lab Equipment Loan Manager | ✅ Completed |
+| Assessment 8 | Week 12 | End of unit - Reflective Statement - 1000 words | ✅ Completed  1, 2, 3, 4, 4 NEW, 5, 6, 7 |
 
 ---
 

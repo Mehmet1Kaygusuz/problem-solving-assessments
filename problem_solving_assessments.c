@@ -1,7 +1,7 @@
 // Started this portfolio on 08 March 2026
 // Each assessment completed through personal study outside of class
 // All code written manually — no copy-paste, no AI generation
-// Total lines of code          : 1814
+// Total lines of code          : 2958
 // Total assessments            : 9
 // Submission due on or before  : 10th of June 2026 before 4pm
 
@@ -25,6 +25,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 // ========================================================================================================================
 // ASSESSMENT 1 — Weekly Screen-Time Tracker
@@ -1604,7 +1605,49 @@ void assessment4n_a() { printf("Assessment 4 - A Grade completed on 06 April 202
 // - Store readings in array of appropriate size
 // - Menu option 1: display all temperature readings
 // - Menu option 2: calculate and display average temperature
-void assessment5_d() { printf("Assessment 5 - D Grade coming soon\n"); }
+void assessment5_d() {
+    printf("Assessment 5 - D Grade completed on 01 May 2026 20:44\n");
+
+    int days;
+    printf("How many days do you want to record (1-30)? ");
+    scanf("%d", &days);
+
+    if (days < 1 || days > 30) {
+        printf("Invalid number of days.\n");
+        return;
+    }
+
+    float temps[30];
+    for (int i = 0; i < days; i++) {
+        printf("Enter temperature for day %d: ", i + 1);
+        scanf("%f", &temps[i]);
+    }
+
+    int choice;
+    printf("\nMenu:\n");
+    printf("1. Display all temperature readings\n");
+    printf("2. Calculate and display average temperature\n");
+    printf("Enter choice: ");
+    scanf("%d", &choice);
+
+    if (choice == 1) {
+        printf("\nAll temperature readings:\n");
+        for (int i = 0; i < days; i++) {
+            printf("Day %d: %.2f C\n", i + 1, temps[i]);
+        }
+    } else if (choice == 2) {
+        float sum = 0;
+        for (int i = 0; i < days; i++) {
+            sum += temps[i];
+        }
+        float avg = sum / days;
+        printf("\nAverage temperature: %.2f C\n", avg);
+    } else {
+        printf("Invalid choice (D grade only supports options 1 and 2).\n");
+    }
+}
+
+
 
 // 5-C Grade (50-59) — Extended Menu with Loop
 // - Complete all previous steps
@@ -1612,7 +1655,68 @@ void assessment5_d() { printf("Assessment 5 - D Grade coming soon\n"); }
 // - Menu option 7: exit
 // - Run menu in a loop until user exits
 // - Handle invalid menu choices gracefully
-void assessment5_c() { printf("Assessment 5 - C Grade coming soon\n"); }
+void assessment5_c() {
+    printf("Assessment 5 - C Grade completed on 02 May 2026 18:17\n");
+
+    int days;
+    printf("How many days do you want to record (1-30)? ");
+    if (scanf("%d", &days) != 1 || days < 1 || days > 30) {
+        printf("Invalid number of days.\n");
+        return;
+    }
+
+    float temps[30];
+    for (int i = 0; i < days; i++) {
+        printf("Enter temperature for day %d: ", i + 1);
+        scanf("%f", &temps[i]);
+    }
+
+    int choice;
+    do {
+        printf("\nMenu:\n");
+        printf("1. Display all temperature readings\n");
+        printf("2. Calculate and display average temperature\n");
+        printf("3. Find highest and lowest temperature\n");
+        printf("7. Exit\n");
+        printf("Enter choice: ");
+
+        if (scanf("%d", &choice) != 1) {
+            printf("Invalid input. Please enter a number.\n");
+            while (getchar() != '\n');
+            continue;
+        }
+
+        if (choice == 1) {
+            printf("\nAll temperature readings:\n");
+            for (int i = 0; i < days; i++) {
+                printf("Day %d: %.2f C\n", i + 1, temps[i]);
+            }
+        } else if (choice == 2) {
+            float sum = 0;
+            for (int i = 0; i < days; i++) {
+                sum += temps[i];
+            }
+            float avg = sum / days;
+            printf("\nAverage temperature: %.2f C\n", avg);
+        } else if (choice == 3) {
+            float min = temps[0];
+            float max = temps[0];
+            for (int i = 1; i < days; i++) {
+                if (temps[i] < min) min = temps[i];
+                if (temps[i] > max) max = temps[i];
+            }
+            printf("\nLowest temperature: %.2f C\n", min);
+            printf("Highest temperature: %.2f C\n", max);
+        } else if (choice == 7) {
+            printf("Exiting program.\n");
+            break;
+        } else {
+            printf("Invalid menu choice. Please select 1, 2, 3 or 7.\n");
+        }
+
+    } while (1);
+}
+
 
 // 5-B Grade (60-69) — Fixed Array and Threshold Analysis
 // - Complete all previous steps
@@ -1620,7 +1724,133 @@ void assessment5_c() { printf("Assessment 5 - C Grade coming soon\n"); }
 // - Menu option 4: count days above/below user-defined threshold
 // - Menu option 5: calculate weekly average temperature (every 7 entries = 1 week)
 // - Explain program logic via in-code comments or portfolio
-void assessment5_b() { printf("Assessment 5 - B Grade coming soon\n"); }
+void assessment5_b() {
+    printf("Assessment 5 - B Grade completed on 03 May 2026 21:28\n");
+
+    int days;
+    printf("How many days do you want to record (1-30)? ");
+    if (scanf("%d", &days) != 1 || days < 1 || days > 30) {
+        printf("Invalid number of days.\n");
+        return;
+    }
+
+    float temps[50];
+    for (int i = 0; i < 50; i++) {
+        temps[i] = -1; // sentinel default
+    }
+
+    for (int i = 0; i < days; i++) {
+        printf("Enter temperature for day %d: ", i + 1);
+        scanf("%f", &temps[i]);
+    }
+    // sentinel at the end of valid data
+    temps[days] = -1;
+
+    int choice;
+    do {
+        printf("\nMenu:\n");
+        printf("1. Display all temperature readings\n");
+        printf("2. Calculate and display average temperature\n");
+        printf("3. Find highest and lowest temperature\n");
+        printf("4. Count days above/below a threshold\n");
+        printf("5. Weekly average temperature\n");
+        printf("7. Exit\n");
+        printf("Enter choice: ");
+
+        if (scanf("%d", &choice) != 1) {
+            printf("Invalid input. Please enter a number.\n");
+            while (getchar() != '\n');
+            continue;
+        }
+
+        if (choice == 1) {
+            printf("\nAll temperature readings:\n");
+            for (int i = 0; i < days; i++) {
+                if (temps[i] == -1) break;
+                printf("Day %d: %.2f C\n", i + 1, temps[i]);
+            }
+        } else if (choice == 2) {
+            float sum = 0;
+            int count = 0;
+            for (int i = 0; i < 50; i++) {
+                if (temps[i] == -1) break;
+                sum += temps[i];
+                count++;
+            }
+            if (count > 0) {
+                float avg = sum / count;
+                printf("\nAverage temperature: %.2f C\n", avg);
+            } else {
+                printf("No data to calculate average.\n");
+            }
+        } else if (choice == 3) {
+            if (temps[0] == -1) {
+                printf("No data.\n");
+            } else {
+                float min = temps[0];
+                float max = temps[0];
+                for (int i = 1; i < 50; i++) {
+                    if (temps[i] == -1) break;
+                    if (temps[i] < min) min = temps[i];
+                    if (temps[i] > max) max = temps[i];
+                }
+                printf("\nLowest temperature: %.2f C\n", min);
+                printf("Highest temperature: %.2f C\n", max);
+            }
+        } else if (choice == 4) {
+            float threshold;
+            int above = 0;
+            int below = 0;
+
+            printf("Enter threshold temperature: ");
+            if (scanf("%f", &threshold) != 1) {
+                printf("Invalid input.\n");
+                while (getchar() != '\n');
+                continue;
+            }
+
+            for (int i = 0; i < 50; i++) {
+                if (temps[i] == -1) break;
+                if (temps[i] > threshold) {
+                    above++;
+                } else if (temps[i] < threshold) {
+                    below++;
+                }
+            }
+
+            printf("\nDays above %.2f C: %d\n", threshold, above);
+            printf("Days below %.2f C: %d\n", threshold, below);
+        } else if (choice == 5) {
+            int index = 0;
+            int weekNumber = 1;
+
+            while (index < 50 && temps[index] != -1) {
+                float sum = 0;
+                int count = 0;
+
+                for (int i = 0; i < 7; i++) {
+                    if (index >= 50 || temps[index] == -1) break;
+                    sum += temps[index];
+                    count++;
+                    index++;
+                }
+
+                if (count > 0) {
+                    float avg = sum / count;
+                    printf("Week %d average: %.2f C (based on %d day(s))\n", weekNumber, avg, count);
+                    weekNumber++;
+                }
+            }
+        } else if (choice == 7) {
+            printf("Exiting program.\n");
+            break;
+        } else {
+            printf("Invalid menu choice. Please select 1,2,3,4,5 or 7.\n");
+        }
+
+    } while (1);
+}
+
 
 // 5-A Grade (70-100) — Reverse Display and Pointers
 // - Complete all previous steps
@@ -1628,16 +1858,260 @@ void assessment5_b() { printf("Assessment 5 - B Grade coming soon\n"); }
 // - Research and explain how pointers work and why useful here
 // - Rewrite part of program using pointers instead of array indexing:
 //   traverse the array, reverse the array, find highest/lowest temperature
-void assessment5_a() { printf("Assessment 5 - A Grade coming soon\n"); }
+
+// Helper: get count of valid entries using sentinel, via pointer
+int getCountWithSentinel(float *temps, int maxSize) {
+    int count = 0;
+    float *p = temps;
+    while (count < maxSize && *p != -1) {
+        count++;
+        p++;
+    }
+    return count;
+}
+
+// Helper: find min and max using pointers
+void findMinMaxPointer(float *temps, int maxSize, float *minOut, float *maxOut) {
+    int count = getCountWithSentinel(temps, maxSize);
+    if (count == 0) {
+        *minOut = 0;
+        *maxOut = 0;
+        return;
+    }
+
+    float *p = temps;
+    *minOut = *p;
+    *maxOut = *p;
+
+    for (int i = 1; i < count; i++) {
+        p++;
+        if (*p < *minOut) *minOut = *p;
+        if (*p > *maxOut) *maxOut = *p;
+    }
+}
+
+// Helper: reverse array in-place using pointers
+void reverseArrayPointer(float *temps, int maxSize) {
+    int count = getCountWithSentinel(temps, maxSize);
+    if (count <= 1) return;
+
+    float *left = temps;
+    float *right = temps + count - 1;
+
+    while (left < right) {
+        float temp = *left;
+        *left = *right;
+        *right = temp;
+        left++;
+        right--;
+    }
+}
+
+void assessment5_a() {
+    printf("Assessment 5 - A Grade completed on 04 May 2026 22:56\n");
+
+    int days;
+    printf("How many days do you want to record (1-30)? ");
+    if (scanf("%d", &days) != 1 || days < 1 || days > 30) {
+        printf("Invalid number of days.\n");
+        return;
+    }
+
+    float temps[50];
+    for (int i = 0; i < 50; i++) {
+        temps[i] = -1; // sentinel default
+    }
+
+    for (int i = 0; i < days; i++) {
+        printf("Enter temperature for day %d: ", i + 1);
+        scanf("%f", &temps[i]);
+    }
+    temps[days] = -1;
+
+    int choice;
+    do {
+        printf("\nMenu:\n");
+        printf("1. Display all temperature readings\n");
+        printf("2. Calculate and display average temperature\n");
+        printf("3. Find highest and lowest temperature (pointer version)\n");
+        printf("4. Count days above/below a threshold\n");
+        printf("5. Weekly average temperature\n");
+        printf("6. Reverse order and display (Today / Yesterday / X days ago)\n");
+        printf("7. Exit\n");
+        printf("Enter choice: ");
+
+        if (scanf("%d", &choice) != 1) {
+            printf("Invalid input. Please enter a number.\n");
+            while (getchar() != '\n');
+            continue;
+        }
+
+        if (choice == 1) {
+            printf("\nAll temperature readings:\n");
+            float *p = temps;
+            int dayIndex = 1;
+            while (dayIndex <= 50 && *p != -1) {
+                printf("Day %d: %.2f C\n", dayIndex, *p);
+                p++;
+                dayIndex++;
+            }
+        } else if (choice == 2) {
+            float sum = 0;
+            int count = 0;
+            float *p = temps;
+
+            while (count < 50 && *p != -1) {
+                sum += *p;
+                count++;
+                p++;
+            }
+
+            if (count > 0) {
+                float avg = sum / count;
+                printf("\nAverage temperature: %.2f C\n", avg);
+            } else {
+                printf("No data to calculate average.\n");
+            }
+        } else if (choice == 3) {
+            float min, max;
+            int count = getCountWithSentinel(temps, 50);
+            if (count == 0) {
+                printf("No data.\n");
+            } else {
+                findMinMaxPointer(temps, 50, &min, &max);
+                printf("\nLowest temperature: %.2f C\n", min);
+                printf("Highest temperature: %.2f C\n", max);
+            }
+        } else if (choice == 4) {
+            float threshold;
+            int above = 0;
+            int below = 0;
+
+            printf("Enter threshold temperature: ");
+            if (scanf("%f", &threshold) != 1) {
+                printf("Invalid input.\n");
+                while (getchar() != '\n');
+                continue;
+            }
+
+            float *p = temps;
+            int count = 0;
+            while (count < 50 && *p != -1) {
+                if (*p > threshold) {
+                    above++;
+                } else if (*p < threshold) {
+                    below++;
+                }
+                p++;
+                count++;
+            }
+
+            printf("\nDays above %.2f C: %d\n", threshold, above);
+            printf("Days below %.2f C: %d\n", threshold, below);
+        } else if (choice == 5) {
+            int totalCount = getCountWithSentinel(temps, 50);
+            int index = 0;
+            int weekNumber = 1;
+
+            while (index < totalCount) {
+                float sum = 0;
+                int count = 0;
+
+                for (int i = 0; i < 7; i++) {
+                    if (index >= totalCount) break;
+                    sum += temps[index];
+                    count++;
+                    index++;
+                }
+
+                if (count > 0) {
+                    float avg = sum / count;
+                    printf("Week %d average: %.2f C (based on %d day(s))\n", weekNumber, avg, count);
+                    weekNumber++;
+                }
+            }
+        } else if (choice == 6) {
+            int count = getCountWithSentinel(temps, 50);
+            if (count == 0) {
+                printf("No data to reverse.\n");
+            } else {
+                reverseArrayPointer(temps, 50);
+
+                printf("\nReversed order (relative to today):\n");
+                float *p = temps;
+                int index = 0;
+
+                while (index < count) {
+                    if (index == 0) {
+                        printf("Today: %.2f C\n", *p);
+                    } else if (index == 1) {
+                        printf("Yesterday: %.2f C\n", *p);
+                    } else {
+                        printf("%d days ago: %.2f C\n", index, *p);
+                    }
+                    p++;
+                    index++;
+                }
+
+                // reverse back to original order so other options still make sense
+                reverseArrayPointer(temps, 50);
+            }
+        } else if (choice == 7) {
+            printf("Exiting program.\n");
+            break;
+        } else {
+            printf("Invalid menu choice. Please select 1,2,3,4,5,6 or 7.\n");
+        }
+
+    } while (1);
+}
 
 // ------------------------------------------------------------------------------------------------------------------------
 // 📝 Personal note — Assessment 5
+// This task was my first structured use of arrays and menus for data analysis.
+// D grade introduced a simple array for up to 30 days and basic average calculation.
+// C grade added a looped menu, highest/lowest temperature, and a clean exit option.
+// B grade refactored the program to use a fixed-size array with a sentinel value (-1),
+// added threshold counting and weekly averages, and relied more on loops and conditions.
+// A grade extended the program with reverse display logic and used pointers to traverse
+// the array, reverse it, and find min/max values, while keeping the code at foundation level.
 // ------------------------------------------------------------------------------------------------------------------------
+
 
 // ========================================================================================================================
 // ASSESSMENT 6 — Book Organizer
 // Week 9 | Topic: Sorting Algorithms and String Handling
 // ========================================================================================================================
+
+
+// ------------------------------------------------------------
+// Helper: Case‑insensitive comparison (foundation‑level)
+// ------------------------------------------------------------
+int compareIgnoreCase(char a[], char b[]) {
+    int i = 0;
+    while (a[i] != '\0' && b[i] != '\0') {
+        char ca = tolower(a[i]);
+        char cb = tolower(b[i]);
+        if (ca < cb) return -1;
+        if (ca > cb) return 1;
+        i++;
+    }
+    if (a[i] == '\0' && b[i] == '\0') return 0;
+    if (a[i] == '\0') return -1;
+    return 1;
+}
+
+// ------------------------------------------------------------
+// Helper: Swap two strings
+// ------------------------------------------------------------
+void swapStrings(char a[], char b[]) {
+    char temp[100];
+    strcpy(temp, a);
+    strcpy(a, b);
+    strcpy(b, temp);
+}
+
+
 
 // 6-D Grade (40-49) — Basic Display Loop
 // - Create string array with 8 book titles in mixed alphabetical order
@@ -1645,7 +2119,26 @@ void assessment5_a() { printf("Assessment 5 - A Grade coming soon\n"); }
 //   Current Title: "<title>"
 //   First Title:   "<title_at_index_0>"
 // - No sorting or manipulation required
-void assessment6_d() { printf("Assessment 6 - D Grade coming soon\n"); }
+void assessment6_d() {
+    printf("Assessment 6 - D Grade completed on 14 May 2026 10:53\n");
+
+    char books[8][100] = {
+        "Hollow Lantern Road",
+        "Fragments of the Azure Gate",
+        "Silent Orchard Manuscript",
+        "The Clockmaker's Veil",
+        "Marrowstone Echoes",
+        "The Glassbound Harbor",
+        "Whispering Atlas",
+        "Emberline Passage"
+    };
+
+    for (int i = 0; i < 8; i++) {
+        printf("Current Title: \"%s\"\n", books[i]);
+        printf("First Title: \"%s\"\n\n", books[0]);
+    }
+}
+
 
 // 6-C Grade (50-59) — Single Pass to Front
 // - Complete all previous steps
@@ -1653,7 +2146,37 @@ void assessment6_d() { printf("Assessment 6 - D Grade coming soon\n"); }
 //   (case-insensitive alphabetical comparison)
 // - Compare each title with index 0 — if earlier alphabetically, swap
 // - Print playlist before and after the loop
-void assessment6_c() { printf("Assessment 6 - C Grade coming soon\n"); }
+
+void assessment6_c() {
+    printf("Assessment 6 - C Grade completed on 15 May 2026 12:35\n");
+
+    char books[8][100] = {
+        "Hollow Lantern Road",
+        "Fragments of the Azure Gate",
+        "Silent Orchard Manuscript",
+        "The Clockmaker's Veil",
+        "Marrowstone Echoes",
+        "The Glassbound Harbor",
+        "Whispering Atlas",
+        "Emberline Passage"
+    };
+
+    printf("Before:\n");
+    for (int i = 0; i < 8; i++) {
+        printf("\"%s\"\n", books[i]);
+    }
+
+    for (int i = 1; i < 8; i++) {
+        if (compareIgnoreCase(books[i], books[0]) < 0) {
+            swapStrings(books[i], books[0]);
+        }
+    }
+
+    printf("\nAfter:\n");
+    for (int i = 0; i < 8; i++) {
+        printf("\"%s\"\n", books[i]);
+    }
+}
 
 // 6-B Grade (60-69) — Full Alphabetical Sort
 // - Complete all previous steps
@@ -1661,7 +2184,43 @@ void assessment6_c() { printf("Assessment 6 - C Grade coming soon\n"); }
 //   (swap strings with first unsorted element on each pass)
 // - Print playlist before and after sorting
 // - Portfolio: explain how the sorting works
-void assessment6_b() { printf("Assessment 6 - B Grade coming soon\n"); }
+
+void assessment6_b() {
+    printf("Assessment 6 - B Grade completed on 16 May 2026 11:38\n");
+
+    char books[8][100] = {
+        "Hollow Lantern Road",
+        "Fragments of the Azure Gate",
+        "Silent Orchard Manuscript",
+        "The Clockmaker's Veil",
+        "Marrowstone Echoes",
+        "The Glassbound Harbor",
+        "Whispering Atlas",
+        "Emberline Passage"
+    };
+
+    printf("Before:\n");
+    for (int i = 0; i < 8; i++) {
+        printf("\"%s\"\n", books[i]);
+    }
+
+    for (int i = 0; i < 8; i++) {
+        int minIndex = i;
+        for (int j = i + 1; j < 8; j++) {
+            if (compareIgnoreCase(books[j], books[minIndex]) < 0) {
+                minIndex = j;
+            }
+        }
+        if (minIndex != i) {
+            swapStrings(books[i], books[minIndex]);
+        }
+    }
+
+    printf("\nAfter:\n");
+    for (int i = 0; i < 8; i++) {
+        printf("\"%s\"\n", books[i]);
+    }
+}
 
 // 6-A Grade (70-100) — Delete and Alternative Sort
 // - Complete all previous steps
@@ -1670,16 +2229,109 @@ void assessment6_b() { printf("Assessment 6 - B Grade coming soon\n"); }
 // - Implement a different sorting algorithm (e.g. Bubble Sort)
 // - Compare old algorithm with new one in terms of logic and performance
 // - Portfolio: thorough explanation required for highest grade
-void assessment6_a() { printf("Assessment 6 - A Grade coming soon\n"); }
+void assessment6_a() {
+    printf("Assessment 6 - A Grade completed on 17 May 2026 11:59\n");
+
+    char books[8][100] = {
+        "Hollow Lantern Road",
+        "Fragments of the Azure Gate",
+        "Silent Orchard Manuscript",
+        "The Clockmaker's Veil",
+        "Marrowstone Echoes",
+        "The Glassbound Harbor",
+        "Whispering Atlas",
+        "Emberline Passage"
+    };
+
+    int count = 8;
+
+    printf("Current list:\n");
+    for (int i = 0; i < count; i++) {
+        printf("\"%s\"\n", books[i]);
+    }
+
+    // -----------------------------
+    // DELETE TITLE
+    // -----------------------------
+    char toDelete[100];
+    printf("\nEnter a book title to delete: ");
+    getchar(); 
+    fgets(toDelete, sizeof(toDelete), stdin);
+
+    // remove newline
+    toDelete[strcspn(toDelete, "\n")] = '\0';
+
+    int found = -1;
+    for (int i = 0; i < count; i++) {
+        if (compareIgnoreCase(books[i], toDelete) == 0) {
+            found = i;
+            break;
+        }
+    }
+
+    if (found == -1) {
+        printf("Title not found.\n");
+    } else {
+        for (int i = found; i < count - 1; i++) {
+            strcpy(books[i], books[i + 1]);
+        }
+        count--;
+        printf("Title deleted.\n");
+    }
+
+    printf("\nList after deletion:\n");
+    for (int i = 0; i < count; i++) {
+        printf("\"%s\"\n", books[i]);
+    }
+
+    // -----------------------------
+    // BUBBLE SORT (new algorithm)
+    // -----------------------------
+    printf("\nApplying Bubble Sort...\n");
+
+    for (int pass = 0; pass < count - 1; pass++) {
+        for (int i = 0; i < count - pass - 1; i++) {
+            if (compareIgnoreCase(books[i], books[i + 1]) > 0) {
+                swapStrings(books[i], books[i + 1]);
+            }
+        }
+    }
+
+    printf("\nAfter Bubble Sort:\n");
+    for (int i = 0; i < count; i++) {
+        printf("\"%s\"\n", books[i]);
+    }
+}
 
 // ------------------------------------------------------------------------------------------------------------------------
 // 📝 Personal note — Assessment 6
+// D grade introduced simple string printing and accessing index 0.
+// C grade added a single-pass selection to move the earliest title to the front.
+// B grade expanded this into a full alphabetical sort using nested loops.
+// A grade added deletion (shifting elements) and a second sorting algorithm (Bubble Sort),
+// allowing comparison between selection-sort logic and bubble-sort logic.
 // ------------------------------------------------------------------------------------------------------------------------
+
 
 // ========================================================================================================================
 // ASSESSMENT 7 — Media Lab Equipment Loan Manager
 // Week 11 | Topic: Functions and File Handling
 // ========================================================================================================================
+
+// Global constants (used mainly for A grade)
+#define MAX_ITEMS 100
+const char FILENAME[] = "loans.txt";
+
+// ---------------------------------------------------------------------
+// Struct definition (used in all grades)
+// ---------------------------------------------------------------------
+typedef struct {
+    int id;
+    char assetTag[30];
+    char status[5]; // e.g. "A" or "L"
+} Item;
+
+
 
 // 7-D Grade (40-49) — Basic Struct and File I/O
 // - Define struct Item with: id (int), assetTag (string), status (char A=Available/L=Loaned)
@@ -1687,14 +2339,173 @@ void assessment6_a() { printf("Assessment 6 - A Grade coming soon\n"); }
 // - addItem()     → get id, assetTag, status from user and append to file
 // - displayItems() → read all records from file and print in tidy format
 // - Demonstrate adding 3+ items and displaying the list
-void assessment7_d() { printf("Assessment 7 - D Grade coming soon\n"); }
+
+void addItem_d() {
+    FILE *fp = fopen(FILENAME, "a");
+    if (fp == NULL) {
+        printf("Error opening file.\n");
+        return;
+    }
+
+    Item item;
+    printf("Enter item id: ");
+    scanf("%d", &item.id);
+
+    printf("Enter asset tag (e.g. CAM-104): ");
+    scanf("%s", item.assetTag);
+
+    printf("Enter status (A=Available, L=Loaned): ");
+    scanf("%s", item.status);
+
+    fprintf(fp, "%d %s %s\n", item.id, item.assetTag, item.status);
+    fclose(fp);
+
+    printf("Item added (D grade version).\n");
+}
+
+void displayItems_d() {
+    FILE *fp = fopen(FILENAME, "r");
+    if (fp == NULL) {
+        printf("No file found or error opening file.\n");
+        return;
+    }
+
+    Item item;
+    printf("\n--- Item List (D grade) ---\n");
+    while (fscanf(fp, "%d %s %s", &item.id, item.assetTag, item.status) == 3) {
+        printf("ID: %d | Tag: %s | Status: %s\n", item.id, item.assetTag, item.status);
+    }
+    fclose(fp);
+}
+
+void assessment7_d() {
+    printf("Assessment 7 - D Grade completed on 19 May 2026 18:42\n");
+
+    // Ensure file exists
+    FILE *fp = fopen(FILENAME, "a");
+    if (fp != NULL) fclose(fp);
+
+    // Add a few items (for screenshots you can call multiple times)
+    addItem_d();
+    addItem_d();
+    addItem_d();
+
+    // Display all items
+    displayItems_d();
+}
 
 // 7-C Grade (50-59) — Parameters and Search
 // - Refactor: addItem(int id, char assetTag[], char status[]) with parameters
 // - Keep displayItems() with no parameters
 // - Add searchItemById(int id) — read file and display matching record or not found message
 // - Duplicate-ID check: addItem() refuses to add if id already exists
-void assessment7_c() { printf("Assessment 7 - C Grade coming soon\n"); }
+
+void displayItems_c() {
+    FILE *fp = fopen(FILENAME, "r");
+    if (fp == NULL) {
+        printf("No file found or error opening file.\n");
+        return;
+    }
+
+    Item item;
+    printf("\n--- Item List (C grade) ---\n");
+    while (fscanf(fp, "%d %s %s", &item.id, item.assetTag, item.status) == 3) {
+        printf("ID: %d | Tag: %s | Status: %s\n", item.id, item.assetTag, item.status);
+    }
+    fclose(fp);
+}
+
+void searchItemById_c(int id) {
+    FILE *fp = fopen(FILENAME, "r");
+    if (fp == NULL) {
+        printf("No file found or error opening file.\n");
+        return;
+    }
+
+    Item item;
+    int found = 0;
+
+    while (fscanf(fp, "%d %s %s", &item.id, item.assetTag, item.status) == 3) {
+        if (item.id == id) {
+            printf("Record found (C grade): ID=%d, Tag=%s, Status=%s\n",
+                   item.id, item.assetTag, item.status);
+            found = 1;
+            break;
+        }
+    }
+    fclose(fp);
+
+    if (!found) {
+        printf("No record with ID %d found.\n", id);
+    }
+}
+
+void addItem_c(int id, char assetTag[], char status[]) {
+    FILE *fp = fopen(FILENAME, "r");
+    if (fp == NULL) {
+        fp = fopen(FILENAME, "w");
+        if (fp == NULL) {
+            printf("Error creating file.\n");
+            return;
+        }
+        fclose(fp);
+        fp = fopen(FILENAME, "r");
+        if (fp == NULL) {
+            printf("Error reopening file.\n");
+            return;
+        }
+    }
+
+    Item item;
+    int duplicate = 0;
+
+    while (fscanf(fp, "%d %s %s", &item.id, item.assetTag, item.status) == 3) {
+        if (item.id == id) {
+            duplicate = 1;
+            break;
+        }
+    }
+    fclose(fp);
+
+    if (duplicate) {
+        printf("Cannot add item. ID %d already exists.\n", id);
+        return;
+    }
+
+    fp = fopen(FILENAME, "a");
+    if (fp == NULL) {
+        printf("Error opening file for append.\n");
+        return;
+    }
+
+    fprintf(fp, "%d %s %s\n", id, assetTag, status);
+    fclose(fp);
+
+    printf("Item added (C grade version).\n");
+}
+
+void assessment7_c() {
+    printf("Assessment 7 - C Grade completed on 20 May 2026 19:19\n");
+
+    int id;
+    char tag[30];
+    char status[5];
+
+    printf("Enter new item id: ");
+    scanf("%d", &id);
+    printf("Enter asset tag: ");
+    scanf("%s", tag);
+    printf("Enter status (A/L): ");
+    scanf("%s", status);
+
+    addItem_c(id, tag, status);
+
+    displayItems_c();
+
+    printf("\nSearch by ID (C grade): ");
+    scanf("%d", &id);
+    searchItemById_c(id);
+}
 
 // 7-B Grade (60-69) — Return Values and Update
 // - Refactor functions to use return values:
@@ -1703,7 +2514,135 @@ void assessment7_c() { printf("Assessment 7 - C Grade coming soon\n"); }
 // - Implement int updateItem(int id, const char newAssetTag[], const char newStatus[])
 //   read all records into memory, apply update, rewrite file
 //   return 1 if successful, 0 if not found
-void assessment7_b() { printf("Assessment 7 - B Grade coming soon\n"); }
+
+int searchItemById_b(int id) {
+    FILE *fp = fopen(FILENAME, "r");
+    if (fp == NULL) {
+        return -1;
+    }
+
+    Item item;
+    int index = 0;
+    while (fscanf(fp, "%d %s %s", &item.id, item.assetTag, item.status) == 3) {
+        if (item.id == id) {
+            fclose(fp);
+            return index;
+        }
+        index++;
+    }
+    fclose(fp);
+    return -1;
+}
+
+int addItem_b(int id, char assetTag[], char status[]) {
+    if (searchItemById_b(id) != -1) {
+        printf("Cannot add item. ID %d already exists (B grade).\n", id);
+        return 0;
+    }
+
+    FILE *fp = fopen(FILENAME, "a");
+    if (fp == NULL) {
+        printf("Error opening file for append.\n");
+        return 0;
+    }
+
+    fprintf(fp, "%d %s %s\n", id, assetTag, status);
+    fclose(fp);
+
+    printf("Item added (B grade version).\n");
+    return 1;
+}
+
+int updateItem_b(int id, const char newAssetTag[], const char newStatus[]) {
+    FILE *fp = fopen(FILENAME, "r");
+    if (fp == NULL) {
+        printf("Error opening file for read.\n");
+        return 0;
+    }
+
+    Item items[MAX_ITEMS];
+    int count = 0;
+
+    while (count < MAX_ITEMS &&
+           fscanf(fp, "%d %s %s", &items[count].id, items[count].assetTag, items[count].status) == 3) {
+        count++;
+    }
+    fclose(fp);
+
+    int found = 0;
+    for (int i = 0; i < count; i++) {
+        if (items[i].id == id) {
+            strcpy(items[i].assetTag, newAssetTag);
+            strcpy(items[i].status, newStatus);
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found) {
+        printf("No record with ID %d found to update.\n", id);
+        return 0;
+    }
+
+    fp = fopen(FILENAME, "w");
+    if (fp == NULL) {
+        printf("Error opening file for write.\n");
+        return 0;
+    }
+
+    for (int i = 0; i < count; i++) {
+        fprintf(fp, "%d %s %s\n", items[i].id, items[i].assetTag, items[i].status);
+    }
+    fclose(fp);
+
+    printf("Record with ID %d updated (B grade).\n", id);
+    return 1;
+}
+
+void displayItems_b() {
+    FILE *fp = fopen(FILENAME, "r");
+    if (fp == NULL) {
+        printf("No file found or error opening file.\n");
+        return;
+    }
+
+    Item item;
+    printf("\n--- Item List (B grade) ---\n");
+    while (fscanf(fp, "%d %s %s", &item.id, item.assetTag, item.status) == 3) {
+        printf("ID: %d | Tag: %s | Status: %s\n", item.id, item.assetTag, item.status);
+    }
+    fclose(fp);
+}
+
+void assessment7_b() {
+    printf("Assessment 7 - B Grade completed on 21 May 2026 19:31\n");
+
+    int id;
+    char tag[30];
+    char status[5];
+
+    printf("Enter new item id: ");
+    scanf("%d", &id);
+    printf("Enter asset tag: ");
+    scanf("%s", tag);
+    printf("Enter status (A/L): ");
+    scanf("%s", status);
+
+    addItem_b(id, tag, status);
+
+    displayItems_b();
+
+    printf("\nEnter ID to update: ");
+    scanf("%d", &id);
+    printf("Enter new asset tag: ");
+    scanf("%s", tag);
+    printf("Enter new status (A/L): ");
+    scanf("%s", status);
+
+    updateItem_b(id, tag, status);
+
+    displayItems_b();
+}
 
 // 7-A Grade (70-100) — Delete and File Persistence
 // - Implement int deleteItem(int id)
@@ -1712,11 +2651,216 @@ void assessment7_b() { printf("Assessment 7 - B Grade coming soon\n"); }
 // - Menu: add / view / search / update / delete / save / exit
 // - On save or exit: write current in-memory data to file
 // - Portfolio: note explaining local vs global scope in implementation
-void assessment7_a() { printf("Assessment 7 - A Grade coming soon\n"); }
+
+Item itemsA[MAX_ITEMS];
+int itemCountA = 0;
+
+void loadFromFileA() {
+    FILE *fp = fopen(FILENAME, "r");
+    if (fp == NULL) {
+        itemCountA = 0;
+        return;
+    }
+
+    itemCountA = 0;
+    while (itemCountA < MAX_ITEMS &&
+           fscanf(fp, "%d %s %s",
+                  &itemsA[itemCountA].id,
+                  itemsA[itemCountA].assetTag,
+                  itemsA[itemCountA].status) == 3) {
+        itemCountA++;
+    }
+    fclose(fp);
+}
+
+void saveToFileA() {
+    FILE *fp = fopen(FILENAME, "w");
+    if (fp == NULL) {
+        printf("Error opening file for save.\n");
+        return;
+    }
+
+    for (int i = 0; i < itemCountA; i++) {
+        fprintf(fp, "%d %s %s\n",
+                itemsA[i].id,
+                itemsA[i].assetTag,
+                itemsA[i].status);
+    }
+    fclose(fp);
+    printf("Data saved to file.\n");
+}
+
+void displayItems_a() {
+    printf("\n--- Item List (A grade, in-memory) ---\n");
+    for (int i = 0; i < itemCountA; i++) {
+        printf("ID: %d | Tag: %s | Status: %s\n",
+               itemsA[i].id,
+               itemsA[i].assetTag,
+               itemsA[i].status);
+    }
+    if (itemCountA == 0) {
+        printf("(No items in memory.)\n");
+    }
+}
+
+int searchItemById_a(int id) {
+    for (int i = 0; i < itemCountA; i++) {
+        if (itemsA[i].id == id) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+int addItem_a(int id, char assetTag[], char status[]) {
+    if (itemCountA >= MAX_ITEMS) {
+        printf("Cannot add more items. Array full.\n");
+        return 0;
+    }
+
+    if (searchItemById_a(id) != -1) {
+        printf("Cannot add item. ID %d already exists (A grade).\n", id);
+        return 0;
+    }
+
+    itemsA[itemCountA].id = id;
+    strcpy(itemsA[itemCountA].assetTag, assetTag);
+    strcpy(itemsA[itemCountA].status, status);
+    itemCountA++;
+
+    printf("Item added to in-memory list.\n");
+    return 1;
+}
+
+int updateItem_a(int id, const char newAssetTag[], const char newStatus[]) {
+    int index = searchItemById_a(id);
+    if (index == -1) {
+        printf("No record with ID %d found to update (A grade).\n", id);
+        return 0;
+    }
+
+    strcpy(itemsA[index].assetTag, newAssetTag);
+    strcpy(itemsA[index].status, newStatus);
+    printf("Record with ID %d updated in memory.\n", id);
+    return 1;
+}
+
+int deleteItem_a(int id) {
+    int index = searchItemById_a(id);
+    if (index == -1) {
+        printf("No record with ID %d found to delete.\n", id);
+        return 0;
+    }
+
+    for (int i = index; i < itemCountA - 1; i++) {
+        itemsA[i] = itemsA[i + 1];
+    }
+    itemCountA--;
+
+    printf("Record with ID %d deleted from memory.\n", id);
+    return 1;
+}
+
+void assessment7_a() {
+    printf("Assessment 7 - A Grade completed on 22 May 2026 21:12\n");
+
+    loadFromFileA();
+
+    int choice;
+    do {
+        printf("\n--- Media Lab Equipment Loan Manager (A grade) ---\n");
+        printf("1. Add item\n");
+        printf("2. View all items\n");
+        printf("3. Search item by ID\n");
+        printf("4. Update item\n");
+        printf("5. Delete item\n");
+        printf("6. Save to file\n");
+        printf("7. Exit\n");
+        printf("Enter choice: ");
+
+        if (scanf("%d", &choice) != 1) {
+            printf("Invalid input. Please enter a number.\n");
+            while (getchar() != '\n');
+            continue;
+        }
+
+        if (choice == 1) {
+            int id;
+            char tag[30];
+            char status[5];
+
+            printf("Enter new item id: ");
+            scanf("%d", &id);
+            printf("Enter asset tag: ");
+            scanf("%s", tag);
+            printf("Enter status (A/L): ");
+            scanf("%s", status);
+
+            addItem_a(id, tag, status);
+
+        } else if (choice == 2) {
+            displayItems_a();
+
+        } else if (choice == 3) {
+            int id;
+            printf("Enter ID to search: ");
+            scanf("%d", &id);
+            int index = searchItemById_a(id);
+            if (index == -1) {
+                printf("No record with ID %d found.\n", id);
+            } else {
+                printf("Found: ID=%d, Tag=%s, Status=%s\n",
+                       itemsA[index].id,
+                       itemsA[index].assetTag,
+                       itemsA[index].status);
+            }
+
+        } else if (choice == 4) {
+            int id;
+            char tag[30];
+            char status[5];
+
+            printf("Enter ID to update: ");
+            scanf("%d", &id);
+            printf("Enter new asset tag: ");
+            scanf("%s", tag);
+            printf("Enter new status (A/L): ");
+            scanf("%s", status);
+
+            updateItem_a(id, tag, status);
+
+        } else if (choice == 5) {
+            int id;
+            printf("Enter ID to delete: ");
+            scanf("%d", &id);
+            deleteItem_a(id);
+
+        } else if (choice == 6) {
+            saveToFileA();
+
+        } else if (choice == 7) {
+            saveToFileA();
+            printf("Exiting program.\n");
+            break;
+
+        } else {
+            printf("Invalid menu choice. Please select 1-7.\n");
+        }
+
+    } while (1);
+}
 
 // ------------------------------------------------------------------------------------------------------------------------
-// 📝 Personal note — Assessment 7 
+// 📝 Personal note — Assessment 7
+// D grade introduced a basic struct, file creation, and simple append/display functions.
+// C grade refactored addItem to use parameters, added a search function, and prevented duplicate IDs.
+// B grade added return values to make functions more informative and implemented an update function
+// that loads all records, modifies one, and rewrites the file.
+// A grade moved to an in-memory array with a menu-driven flow, added deletion with file rewrite,
+// and used a small set of global variables (filename, capacity, array, count) while keeping most
+// logic inside local scopes in functions.
 // ------------------------------------------------------------------------------------------------------------------------
+
 
 // ========================================================================================================================
 // MAIN MENU
